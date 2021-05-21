@@ -5,7 +5,21 @@ body {
 	background-color: #f7f7f7;
 }
 
+header.pyp-header, footer.pyp-footer {
+	background-color: #333;
+	color: #fff;
+	padding: 50px;
+	text-align: center;
+}
 
+header.pyp-header {
+	padding-top: 60px;
+}
+
+content.pyp-content {
+	display: block;
+	padding: 50px 10px;
+}
 
 div.palette {
 	display: block;
