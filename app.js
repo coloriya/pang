@@ -33,28 +33,35 @@ const numberOfPalettes = palettes.length;
 const numberOfPalettesOnAPage = 10;
 const numberOfPages = Math.ceil(numberOfPalettes / numberOfPalettesOnAPage);
 
+const pages = [];
 for (let x = 1; x <= numberOfPages; x++) {
-	let pageTitle = (x == 1) ? "palpng | home" : "palpng | page | " + x;
-	let pageDirPath = (x == 1) ? "docs" : `docs/page/${x}`;
-	let pageHtmlPath = `${pageDirPath}/index.html`;
-	let baseDepth = (x == 1) ? 0 : 2;
+	let page = {};
+	page.number = x;
+	page.title = (x == 1) ? "palpng | home" : "palpng | page | " + x;
+	page.dirPath = (x == 1) ? "docs" : `docs/page/${x}`;
+	page.htmlPath = `${page.dirPath}/index.html`;
+	page.baseDepth = (x == 1) ? 0 : 2;
 
 	let start = numberOfPalettesOnAPage * (x - 1);
 	let end = start + numberOfPalettesOnAPage;
-	let pagePalettes = palettes.slice(start, end);
+	page.palettes = palettes.slice(start, end);
+	pages.push(page);
+}
 
-	if (!fs.existsSync(pageDirPath)) {
-		fs.mkdirSync(pageDirPath);
-		console.log(`Created: (${pageDirPath})`);
+for (let page of pages) {
+	if (!fs.existsSync(page.dirPath)) {
+		fs.mkdirSync(page.dirPath);
+		console.log(`Created: (${page.dirPath})`);
 	}
 
-	fs.writeFileSync(pageHtmlPath, pugs.home({
+	fs.writeFileSync(page.htmlPath, pugs.home({
 		alphabet: alphabet,
-		title: pageTitle,
-		palettes: pagePalettes,
-		base_depth: baseDepth
+		title: page.title,
+		base_depth: page.baseDepth,
+		page: page,
+		pages: pages
 	}));
-	console.log(`\tRendered: (${pageHtmlPath})`);
+	console.log(`\tRendered: (${page.htmlPath})`);
 }
 
 
