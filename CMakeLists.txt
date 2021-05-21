@@ -6,6 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 
-add_executable(squares src/squares.cpp)
+add_executable(squares cpp/squares.cpp)
 
 
