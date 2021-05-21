@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Ubuntu Mono";
+  font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;
   background-color: #f7f7f7;
 }
 
@@ -67,4 +67,19 @@ div.palette-detail > div.column > b {
 }
 div.palette-detail > div.column > b.c {
   height: 60px;
+}
+
+div.pagination {
+  text-align: center;
+  padding: 50px;
+}
+div.pagination > a {
+  display: inline-block;
+  background-color: #fff;
+  color: #222;
+  font-weight: bold;
+  padding: 10px 10px;
+  border: 1px solid #777;
+  margin-right: -1px;
+  margin-bottom: -1px;
 }
