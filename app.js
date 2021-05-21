@@ -30,7 +30,7 @@ for (let palette of palettes) {
 }
 
 const numberOfPalettes = palettes.length;
-const numberOfPalettesOnAPage = 10;
+const numberOfPalettesOnAPage = 20;
 const numberOfPages = Math.ceil(numberOfPalettes / numberOfPalettesOnAPage);
 
 const pages = [];
