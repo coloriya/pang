@@ -6,6 +6,8 @@ const pypalettes = JSON.parse(fs.readFileSync("data/palettes.json"));
 const palettes = pypalettes.palettes;
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+const gaText = fs.readFileSync("src/txt/analytics.html", 'utf8');
+
 const pugs = {
 	home: pug.compileFile("src/pug/home.pug"),
 	palette: pug.compileFile("src/pug/palette.pug")
@@ -24,7 +26,8 @@ for (let palette of palettes) {
 		alphabet: alphabet,
 		title: `palpng | palette | ${palette.id}`,
 		palette: palette,
-		base_depth: 2
+		base_depth: 2,
+		gaText: gaText
 	}));
 	console.log(`\tRendered: (${htmlPath})`);
 }
@@ -60,10 +63,10 @@ for (let page of pages) {
 		title: page.title,
 		base_depth: page.baseDepth,
 		page: page,
-		pages: pages
+		pages: pages,
+		gaText: gaText
 	}));
 	console.log(`\tRendered: (${page.htmlPath})`);
 }
-
 
 
