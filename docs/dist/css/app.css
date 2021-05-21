@@ -34,7 +34,7 @@ div.palette > div.colors > div {
   width: 100px;
   background-color: #fff;
 }
-div.palette > div.colors > div:nth-child(odd) {
+div.palette > div.colors > div:nth-child(even) {
   background-color: #eee;
 }
 div.palette > div.colors > div > p {
@@ -56,7 +56,7 @@ div.palette-detail > div.column {
   width: 100px;
   margin-right: -1px;
 }
-div.palette-detail > div.column:first-child, div.palette-detail > div.column:last-child {
+div.palette-detail > div.column.header {
   width: 40px;
 }
 div.palette-detail > div.column > b {
