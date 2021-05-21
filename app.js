@@ -14,7 +14,7 @@ const pugs = {
 
 
 for (let palette of palettes) {
-	let dirPath = `docs/${palette.id}`;
+	let dirPath = `docs/palette/${palette.id}`;
 	let htmlPath = `${dirPath}/index.html`;
 	if (!fs.existsSync(dirPath)) {
 		fs.mkdirSync(dirPath);
@@ -22,9 +22,9 @@ for (let palette of palettes) {
 	}
 	fs.writeFileSync(htmlPath, pugs.palette({
 		alphabet: alphabet,
-		title: `Palette no. ${palette.id}`,
+		title: `palpng | palette | ${palette.id}`,
 		palette: palette,
-		base_depth: 1
+		base_depth: 2
 	}));
 	console.log(`Rendered: (${htmlPath})`);
 }
@@ -34,7 +34,7 @@ for (let palette of palettes) {
 const homeHtmlPath = "docs/index.html";
 fs.writeFileSync(homeHtmlPath, pugs.home({
 	alphabet: alphabet,
-	title: "Home",
+	title: "palpng | home",
 	palettes: palettes
 }));
 console.log(`Rendered: (${homeHtmlPath})`);

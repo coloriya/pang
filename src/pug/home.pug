@@ -6,7 +6,7 @@ block content
 		div.palette
 			div.title
 				h2
-					- let href = `${palette.id}`;
+					- let href = `palette/${palette.id}`;
 					a(href=href) Palette no. #{palette.id}
 			div.colors
 				each color, index in palette.colors
