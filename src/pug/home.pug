@@ -2,7 +2,7 @@
 extends _base
 
 block content
-	each palette in palettes
+	each palette in page.palettes
 		div.palette
 			div.title
 				h2
@@ -14,5 +14,12 @@ block content
 					div
 						p(class=classname)
 						b= color.hex
+	div.pagination
+		each p in pages
+			if p == page
+				a current page
+			else
+				a(href=p.path)= p.number
+
 
 

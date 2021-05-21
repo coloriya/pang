@@ -78,4 +78,19 @@ div.palette-detail {
 	}
 }
 
+div.pagination {
+	text-align: center;
+	padding: 50px;
+	& > a {
+		display: inline-block;
+		background-color: #fff;
+		color: #222;
+		font-weight: bold;
+		padding: 10px 10px;
+		border: 1px solid #777;
+		margin-right: -1px;
+		margin-bottom: -1px;
+	}
+}
+
 

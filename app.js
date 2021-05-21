@@ -38,7 +38,8 @@ for (let x = 1; x <= numberOfPages; x++) {
 	let page = {};
 	page.number = x;
 	page.title = (x == 1) ? "palpng | home" : "palpng | page | " + x;
-	page.dirPath = (x == 1) ? "docs" : `docs/page/${x}`;
+	page.path = (x == 1) ? "" : `page/${x}`;
+	page.dirPath = `docs/${page.path}`;
 	page.htmlPath = `${page.dirPath}/index.html`;
 	page.baseDepth = (x == 1) ? 0 : 2;
 
