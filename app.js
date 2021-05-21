@@ -37,6 +37,7 @@ for (let x = 1; x <= numberOfPages; x++) {
 	let pageTitle = (x == 1) ? "palpng | home" : "palpng | page | " + x;
 	let pageDirPath = (x == 1) ? "docs" : `docs/page/${x}`;
 	let pageHtmlPath = `${pageDirPath}/index.html`;
+	let baseDepth = (x == 1) ? 0 : 2;
 
 	let start = numberOfPalettesOnAPage * (x - 1);
 	let end = start + numberOfPalettesOnAPage;
@@ -50,7 +51,8 @@ for (let x = 1; x <= numberOfPages; x++) {
 	fs.writeFileSync(pageHtmlPath, pugs.home({
 		alphabet: alphabet,
 		title: pageTitle,
-		palettes: pagePalettes
+		palettes: pagePalettes,
+		base_depth: baseDepth
 	}));
 	console.log(`\tRendered: (${pageHtmlPath})`);
 }
