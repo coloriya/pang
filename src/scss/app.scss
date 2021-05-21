@@ -38,7 +38,7 @@ div.palette {
 			display: inline-block;
 			width: 100px;
 			background-color: #fff;
-			&:nth-child(odd) {
+			&:nth-child(even) {
 				background-color: #eee;
 			}
 			& > p {
@@ -63,7 +63,7 @@ div.palette-detail {
 		display: inline-block;
 		width: 100px;
 		margin-right: -1px;
-		&:first-child, &:last-child {
+		&.header {
 			width: 40px;
 		}
 		& > b {
