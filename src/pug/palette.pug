@@ -1,0 +1,31 @@
+
+extends _base
+
+block content
+	div.palette-detail
+		div.column
+			b.x #
+			b.c
+			b.r R
+			b.g G
+			b.b B
+			b.c
+			b.h H
+			b.s S
+			b.l L
+			b.c
+		each color, index in palette.colors
+			- let classname = `pyp${palette.id}${alphabet[index]}`;
+			div.column
+				b.x= color.hex
+				b.c(class=classname)
+				b.r= color.rgb[0]
+				b.g= color.rgb[1]
+				b.b= color.rgb[2]
+				b.c(class=classname)
+				b.h= color.hsl[0]
+				b.s= color.hsl[1]
+				b.l= color.hsl[2]
+				b.c(class=classname)
+
+

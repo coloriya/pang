@@ -1,0 +1,18 @@
+
+extends _base
+
+block content
+	each palette in palettes
+		div.palette
+			div.title
+				h2
+					- let href = `${palette.id}`;
+					a(href=href) Palette no. #{palette.id}
+			div.colors
+				each color, index in palette.colors
+					- let classname = `pyp${palette.id}${alphabet[index]}`;
+					div
+						p(class=classname)
+						b= color.hex
+
+

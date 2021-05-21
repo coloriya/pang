@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset='utf-8')
+
+		title= title
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+
+		if base_depth == 1
+			base(href="../")
+		else if base_depth == 2
+			base(href="../../")
+		else
+			base(href="")
+
+		link(rel="stylesheet", href="dist/css/pyp.css")
+		link(rel="stylesheet", href="dist/css/app.css")
+
+		//- | !{app.getGAText()}
+
+	body
+		header.pyp-header
+		content.pyp-content
+			block content
+		footer.pyp-footer
+
+
