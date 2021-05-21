@@ -26,18 +26,34 @@ for (let palette of palettes) {
 		palette: palette,
 		base_depth: 2
 	}));
-	console.log(`Rendered: (${htmlPath})`);
+	console.log(`\tRendered: (${htmlPath})`);
 }
 
+const numberOfPalettes = palettes.length;
+const numberOfPalettesOnAPage = 10;
+const numberOfPages = Math.ceil(numberOfPalettes / numberOfPalettesOnAPage);
 
+for (let x = 1; x <= numberOfPages; x++) {
+	let pageTitle = (x == 1) ? "palpng | home" : "palpng | page | " + x;
+	let pageDirPath = (x == 1) ? "docs" : `docs/page/${x}`;
+	let pageHtmlPath = `${pageDirPath}/index.html`;
 
-const homeHtmlPath = "docs/index.html";
-fs.writeFileSync(homeHtmlPath, pugs.home({
-	alphabet: alphabet,
-	title: "palpng | home",
-	palettes: palettes
-}));
-console.log(`Rendered: (${homeHtmlPath})`);
+	let start = numberOfPalettesOnAPage * (x - 1);
+	let end = start + numberOfPalettesOnAPage;
+	let pagePalettes = palettes.slice(start, end);
+
+	if (!fs.existsSync(pageDirPath)) {
+		fs.mkdirSync(pageDirPath);
+		console.log(`Created: (${pageDirPath})`);
+	}
+
+	fs.writeFileSync(pageHtmlPath, pugs.home({
+		alphabet: alphabet,
+		title: pageTitle,
+		palettes: pagePalettes
+	}));
+	console.log(`\tRendered: (${pageHtmlPath})`);
+}
 
 
 
