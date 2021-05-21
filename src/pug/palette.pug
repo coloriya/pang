@@ -1,8 +1,7 @@
 
 extends _base
 
-block content
-	div.palette-detail
+mixin LabelColumn
 		div.column
 			b.x #
 			b.c
@@ -14,6 +13,10 @@ block content
 			b.s S
 			b.l L
 			b.c
+
+block content
+	div.palette-detail
+		+LabelColumn()
 		each color, index in palette.colors
 			- let classname = `pyp${palette.id}${alphabet[index]}`;
 			div.column
@@ -27,5 +30,6 @@ block content
 				b.s= color.hsl[1]
 				b.l= color.hsl[2]
 				b.c(class=classname)
+		+LabelColumn()
 
 

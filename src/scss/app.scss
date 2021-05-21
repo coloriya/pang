@@ -63,7 +63,7 @@ div.palette-detail {
 		display: inline-block;
 		width: 100px;
 		margin-right: -1px;
-		&:first-child {
+		&:first-child, &:last-child {
 			width: 40px;
 		}
 		& > b {
