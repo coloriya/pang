@@ -9,7 +9,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz"
 const gaText = fs.readFileSync("src/txt/analytics.html", 'utf8');
 
 const pugs = {
-	home: pug.compileFile("src/pug/home.pug"),
+	page: pug.compileFile("src/pug/page.pug"),
 	palette: pug.compileFile("src/pug/palette.pug")
 };
 
@@ -58,7 +58,7 @@ for (let page of pages) {
 		console.log(`Created: (${page.dirPath})`);
 	}
 
-	fs.writeFileSync(page.htmlPath, pugs.home({
+	fs.writeFileSync(page.htmlPath, pugs.page({
 		alphabet: alphabet,
 		title: page.title,
 		base_depth: page.baseDepth,
