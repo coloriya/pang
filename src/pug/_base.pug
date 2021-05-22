@@ -14,8 +14,13 @@ html(lang="en")
 			base(href="")
 
 		link(rel="stylesheet", href="dist/css/app.css")
+
 		if page
 			- let cssHref = `dist/css/pages/${page.number}.css`;
+			link(rel="stylesheet", href=cssHref)
+
+		if palette
+			- let cssHref = `dist/css/palettes/${palette.id}.css`;
 			link(rel="stylesheet", href=cssHref)
 
 		| !{gaText}
