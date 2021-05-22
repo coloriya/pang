@@ -30,6 +30,16 @@ for (let palette of palettes) {
 		gaText: gaText
 	}));
 	console.log(`\tRendered: (${htmlPath})`);
+
+	let cssPath = `docs/dist/css/palettes/${palette.id}.css`;
+	let cssText = "";
+	for (let index in palette.colors) {
+		let color = palette.colors[index];
+		cssText += `.pyp${palette.id}${alphabet[index]} {background: ${color.hex};}\n`;
+	}
+
+	fs.writeFileSync(cssPath, cssText);
+	console.log(`Saved: (${cssPath})`);
 }
 
 const numberOfPalettes = palettes.length;
@@ -70,7 +80,7 @@ for (let page of pages) {
 	console.log(`\tRendered: (${page.htmlPath})`);
 
 	let cssText = "";
-	for (let palette of page.palettes) {	
+	for (let palette of page.palettes) {
 		for (let index in palette.colors) {
 			let color = palette.colors[index];
 			cssText += `.pyp${palette.id}${alphabet[index]} {background: ${color.hex};}\n`;
