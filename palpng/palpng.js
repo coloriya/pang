@@ -3,6 +3,7 @@ const fs = require("fs");
 
 const Palette = require("./palette");
 const Page = require("./page");
+const PangTemplate = require("./template");
 
 
 
@@ -14,6 +15,7 @@ function PalpngApp () {
 
 	this.setupPalettes();
 	this.setupPages();
+	this.setupTemplates();
 }
 
 PalpngApp.prototype.setupPalettes = function () {
@@ -35,6 +37,13 @@ PalpngApp.prototype.setupPages = function () {
 		let page = new Page(this, pageNumber);
 		this.pages.push(page);
 	}
+}
+
+PalpngApp.prototype.setupTemplates = function () {
+	this.templates = {
+		page: new PangTemplate(this, "page"),
+		palette: new PangTemplate(this, "palette")
+	};
 }
 
 
