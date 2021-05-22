@@ -1,0 +1,6 @@
+{
+	"paths": {
+		"palettes": "../data/palettes.json",
+		"output": "../docs/dist/img/palettes"
+	}
+}
