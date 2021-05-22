@@ -3,7 +3,7 @@ const PalpngApp = require("./palpng");
 const app = new PalpngApp();
 
 app.consoleLog();
-app.pages[1].saveCss();
+app.palettes[1].saveCss();
 
 process.exit();
 
@@ -38,16 +38,6 @@ for (let palette of palettes) {
 		gaText: gaText
 	}));
 	console.log(`\tRendered: (${htmlPath})`);
-
-	let cssPath = `docs/dist/css/palettes/${palette.id}.css`;
-	let cssText = "";
-	for (let index in palette.colors) {
-		let color = palette.colors[index];
-		cssText += `.pyp${palette.id}${alphabet[index]} {background: ${color.hex};}\n`;
-	}
-
-	fs.writeFileSync(cssPath, cssText);
-	console.log(`Saved: (${cssPath})`);
 }
 
 const numberOfPalettes = palettes.length;
