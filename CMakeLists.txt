@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 
-add_executable(pang cpp/pang.cpp)
+file(GLOB pang_srcs cpp/*.cpp)
+add_executable(pang ${pang_srcs})
 
 
