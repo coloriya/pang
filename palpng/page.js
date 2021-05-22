@@ -14,6 +14,12 @@ function Page (app, number) {
 		palette.page = this;
 	}
 
+	this.next = null;
+	this.prev = this.app.getLastPage();
+	if (this.prev) {
+		this.prev.next = this;
+	}
+
 	this.relativeURL = (this.number == 1) ? "" : `page/${this.number}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 

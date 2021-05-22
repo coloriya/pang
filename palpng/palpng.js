@@ -39,4 +39,20 @@ PalpngApp.prototype.setupPages = function () {
 
 
 
+PalpngApp.prototype.getLastPage = function () {
+	if (this.pages.length) {
+		return this.pages[this.pages.length - 1];
+	}
+	return null;
+}
+
+PalpngApp.prototype.getLastPalette = function () {
+	if (this.palettes.length) {
+		return this.palettes[this.palettes.length - 1];
+	}
+	return null;
+}
+
+
+
 module.exports = PalpngApp;
