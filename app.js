@@ -1,6 +1,6 @@
 
 const PangApp = require("./palpng");
-const app = new PangApp();
+const pang = new PangApp();
 
 const argv = process.argv;
 const command = argv[2] ? argv[2].toLowerCase() : null;
@@ -8,29 +8,29 @@ const arg = argv[3] ? argv[3].toLowerCase() : null;
 
 switch (command) {
 	case "log":
-		app.consoleLog();
+		pang.consoleLog();
 		break;
 
 	case "css":
-		app.saveCss();
+		pang.saveCss();
 		break;
 	case "pagescss":
-		app.savePageCss();
+		pang.savePageCss();
 		break;
 	case "palscss":
 	case "palettescss":
-		app.savePaletteCss();
+		pang.savePaletteCss();
 		break;
 
 	case "html":
-		app.saveHtml();
+		pang.saveHtml();
 		break;
 	case "pageshtml":
-		app.savePageHtml();
+		pang.savePageHtml();
 		break;
 	case "palshtml":
 	case "paletteshtml":
-		app.savePaletteHtml();
+		pang.savePaletteHtml();
 		break;
 
 	default:

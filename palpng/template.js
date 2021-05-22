@@ -11,7 +11,6 @@ function PangTemplate (app, name) {
 	this.name = name;
 	this.filename = name + ".pug";
 	this.path = path.join(this.app.paths.templates, this.filename);
-	console.log(this.path);
 }
 
 PangTemplate.prototype.getPug = function () {
