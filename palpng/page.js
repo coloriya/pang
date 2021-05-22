@@ -1,4 +1,6 @@
 
+const path = require("path");
+
 
 
 function Page (app, number) {
@@ -11,10 +13,18 @@ function Page (app, number) {
 	for (let palette of this.palettes) {
 		palette.page = this;
 	}
+
+	this.relativeURL = (this.number == 1) ? "" : `page/${this.number}`;
+	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
+
+	this.cssURL = `dist/css/pages/${this.number}.css`;
+	this.cssPath = path.join(this.app.paths.output, this.cssURL);
 }
 
 Page.prototype.consoleLog = function () {
-	console.log(`Page no. ${this.number} has ${this.palettes.length} palettes (${this.start}, ${this.end})`);
+	console.log(`Page ${this.number} (${this.palettes.length} palettes):`);
+	console.log(`\tHTML: ${this.htmlPath}`);
+	console.log(`\t CSS: ${this.cssPath}`);
 }
 
 
