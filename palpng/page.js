@@ -30,6 +30,17 @@ function PangPage (app, number) {
 
 
 
+PangPage.prototype.getTitle = function () {
+	return (this.number == 1) ? "palpng | home" : "palpng | page | " + this.number;
+}
+
+PangPage.prototype.getBaseDepth = function () {
+	if (this.number == 1) {
+		return 0;
+	}
+	return 2;
+}
+
 PangPage.prototype.getCssText = function () {
 	let cssText = "";
 	for (let palette of this.palettes) {
@@ -42,6 +53,16 @@ PangPage.prototype.saveCss = function () {
 	let cssText = this.getCssText();
 	fs.writeFileSync(this.cssPath, cssText);
 	console.log(`\tSaved CSS for page: ${this.cssPath}`);
+}
+
+PangPage.prototype.saveHtml = function () {
+	let template = this.app.templates.page.getPug();
+	fs.writeFileSync(this.htmlPath, template({
+		me: this,
+		page: this,
+		app: this.app
+	}));
+	console.log(`\tSaved HTML for page: ${this.htmlPath}`);
 }
 
 

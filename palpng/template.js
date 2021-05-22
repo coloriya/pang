@@ -14,6 +14,13 @@ function PangTemplate (app, name) {
 	console.log(this.path);
 }
 
+PangTemplate.prototype.getPug = function () {
+	if (!this.template) {
+		this.template = pug.compileFile(this.path);
+	}
+	return this.template;
+}
+
 
 
 module.exports = PangTemplate;

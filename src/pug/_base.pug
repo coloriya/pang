@@ -3,12 +3,12 @@ html(lang="en")
 	head
 		meta(charset='utf-8')
 
-		title= title
+		title= me.getTitle()
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 
-		if base_depth == 1
+		if me.getBaseDepth() == 1
 			base(href="../")
-		else if base_depth == 2
+		else if me.getBaseDepth() == 2
 			base(href="../../")
 		else
 			base(href="")
@@ -23,7 +23,7 @@ html(lang="en")
 			- let cssHref = `dist/css/palettes/${palette.id}.css`;
 			link(rel="stylesheet", href=cssHref)
 
-		| !{gaText}
+		| !{app.gaText}
 
 	body
 		header.pyp-header

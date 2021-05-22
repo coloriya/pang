@@ -9,6 +9,14 @@ function PangColor (palette, json, index) {
 }
 
 
+PangColor.prototype.getHexCode = function () {
+	return this.json.hex;
+}
+
+PangColor.prototype.getClassName = function () {
+	return `pyp${this.palette.id}${this.app.alphabet[this.index]}`;
+}
+
 PangColor.prototype.getCssText = function () {
 	return `.pyp${this.palette.id}${this.app.alphabet[this.index]} {background: ${this.json.hex};}\n`;
 }
