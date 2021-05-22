@@ -24,7 +24,7 @@ switch (command) {
 		console.log(`Unknown command: '${command}'`);
 }
 
-app.pages[3].saveHtml();
+app.palettes[3].saveHtml();
 
 process.exit();
 

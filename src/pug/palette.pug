@@ -17,18 +17,18 @@ mixin LabelColumn
 block content
 	div.palette-detail
 		+LabelColumn()
-		each color, index in palette.colors
-			- let classname = `pyp${palette.id}${alphabet[index]}`;
+		each color in palette.colors
+			- let classname = color.getClassName();
 			div.column
-				b.x= color.hex
+				b.x= color.getHexCode()
 				b.c(class=classname)
-				b.r= color.rgb[0]
-				b.g= color.rgb[1]
-				b.b= color.rgb[2]
+				b.r= color.json.rgb[0]
+				b.g= color.json.rgb[1]
+				b.b= color.json.rgb[2]
 				b.c(class=classname)
-				b.h= color.hsl[0]
-				b.s= color.hsl[1]
-				b.l= color.hsl[2]
+				b.h= color.json.hsl[0]
+				b.s= color.json.hsl[1]
+				b.l= color.json.hsl[2]
 				b.c(class=classname)
 		+LabelColumn()
 

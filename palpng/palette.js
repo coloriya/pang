@@ -25,11 +25,21 @@ function PangPalette (app, json) {
 		this.colors.push(color);
 	}
 
-	this.relativeURL = `palette/${this.number}`;
+	this.relativeURL = `palette/${this.id}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 
 	this.cssURL = `dist/css/palettes/${this.id}.css`;
 	this.cssPath = path.join(this.app.paths.output, this.cssURL);
+}
+
+
+
+PangPalette.prototype.getTitle = function () {
+	return `palpng | palette | ${this.id}`;
+}
+
+PangPalette.prototype.getBaseDepth = function () {
+	return 2;
 }
 
 
@@ -47,6 +57,16 @@ PangPalette.prototype.saveCss = function () {
 	let cssText = this.getCssText();
 	fs.writeFileSync(this.cssPath, cssText);
 	console.log(`\tSaved CSS for page: ${this.cssPath}`);
+}
+
+PangPalette.prototype.saveHtml = function () {
+	let template = this.app.templates.palette.getPug();
+	fs.writeFileSync(this.htmlPath, template({
+		me: this,
+		palette: this,
+		app: this.app
+	}));
+	console.log(`\tSaved HTML for palette: ${this.htmlPath}`);
 }
 
 
