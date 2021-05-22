@@ -2,34 +2,45 @@
 extends _base
 
 mixin LabelColumn
-		div.column.header
-			b.x #
-			b.c
-			b.r R
-			b.g G
-			b.b B
-			b.c
-			b.h H
-			b.s S
-			b.l L
-			b.c
+	| !{app.nl}
+	div.column.header
+		| !{app.nl}
+		b.x #
+		b.c
+		b.r R
+		b.g G
+		b.b B
+		| !{app.nl}
+		b.c
+		b.h H
+		b.s S
+		b.l L
+		| !{app.nl}
+		b.c
+	| !{app.nl}
 
 block content
 	div.palette-detail
 		+LabelColumn()
 		each color in palette.colors
+			| !{app.nl}
 			- let classname = color.getClassName();
 			div.column
+				| !{app.nl}
 				b.x= color.getHexCode()
 				b.c(class=classname)
 				b.r= color.json.rgb[0]
 				b.g= color.json.rgb[1]
 				b.b= color.json.rgb[2]
+				| !{app.nl}
 				b.c(class=classname)
 				b.h= color.json.hsl[0]
 				b.s= color.json.hsl[1]
 				b.l= color.json.hsl[2]
+				| !{app.nl}
 				b.c(class=classname)
+
+			| !{app.nl}
 		+LabelColumn()
 
 

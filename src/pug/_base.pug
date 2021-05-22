@@ -3,8 +3,10 @@ html(lang="en")
 	head
 		meta(charset='utf-8')
 
+		| !{app.nl}
 		title= me.getTitle()
 		meta(name="viewport" content="width=device-width, initial-scale=1")
+		| !{app.nl}
 
 		if me.getBaseDepth() == 1
 			base(href="../")
@@ -13,7 +15,9 @@ html(lang="en")
 		else
 			base(href="")
 
+		| !{app.nl}
 		link(rel="stylesheet", href="dist/css/app.css")
+		| !{app.nl}
 
 		if page
 			- let cssHref = `dist/css/pages/${page.number}.css`;
@@ -23,13 +27,18 @@ html(lang="en")
 			- let cssHref = `dist/css/palettes/${palette.id}.css`;
 			link(rel="stylesheet", href=cssHref)
 
+		| !{app.nl}
 		| !{app.gaText}
+		| !{app.nl}
 
 	body
+		| !{app.nl}
 		header.pyp-header
 			h1 palpng
+		| !{app.nl}
 		content.pyp-content
 			block content
+		| !{app.nl}
 		footer.pyp-footer
 			h2 &copy; Ankur Seth 2021
 

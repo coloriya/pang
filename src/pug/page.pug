@@ -3,6 +3,7 @@ extends _base
 
 block content
 	each palette in page.palettes
+		| !{app.nl}
 		div.palette
 			div.title
 				h2
@@ -10,11 +11,13 @@ block content
 					a(href=href) Palette no. #{palette.id}
 			div.colors
 				each color, index in palette.colors
+					| !{app.nl}
 					div
 						p(class=color.getClassName())
 						b= color.getHexCode()
 	div.pagination
 		each p in app.pages
+			| !{app.nl}
 			if p == page
 				a current page
 			else
