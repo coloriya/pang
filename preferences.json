@@ -1,0 +1,13 @@
+{
+	"paths": {
+		"data": "data",
+		"templates": "src/pug",
+		"output": "docs"
+	},
+
+	"pageLength": 20,
+
+	"meta": {
+		"title": "pang"
+	}
+}
