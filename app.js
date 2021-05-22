@@ -3,7 +3,7 @@ const PalpngApp = require("./palpng");
 const app = new PalpngApp();
 
 app.consoleLog();
-app.palettes[1].saveCss();
+app.saveCss();
 
 process.exit();
 

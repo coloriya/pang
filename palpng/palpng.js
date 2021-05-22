@@ -65,6 +65,25 @@ PalpngApp.prototype.getNumberOfPalettes = function () {
 
 
 
+PalpngApp.prototype.savePageCss = function () {
+	for (let page of this.pages) {
+		page.saveCss();
+	}
+}
+
+PalpngApp.prototype.savePaletteCss = function () {
+	for (let palette of this.palettes) {
+		palette.saveCss();
+	}
+}
+
+PalpngApp.prototype.saveCss = function () {
+	this.savePageCss();
+	this.savePaletteCss();
+}
+
+
+
 PalpngApp.prototype.consoleLog = function () {
 	console.log(`\t(${this.getNumberOfPages()} pages)`);
 	console.log(`\t(${this.getNumberOfPalettes()} palettes)`);
