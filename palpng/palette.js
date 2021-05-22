@@ -4,7 +4,7 @@ const path = require("path");
 
 
 
-function Palette (app, json) {
+function PangPalette (app, json) {
 	this.app = app;
 	this.json = json;
 	this.id = json.id;
@@ -25,7 +25,7 @@ function Palette (app, json) {
 
 
 
-Palette.prototype.getCssText = function () {
+PangPalette.prototype.getCssText = function () {
 	let cssText = "";
 	for (let index in this.json.colors) {
 		let color = this.json.colors[index];
@@ -35,7 +35,7 @@ Palette.prototype.getCssText = function () {
 	return cssText;
 }
 
-Palette.prototype.saveCss = function () {
+PangPalette.prototype.saveCss = function () {
 	let cssText = this.getCssText();
 	fs.writeFileSync(this.cssPath, cssText);
 	console.log(`\tSaved CSS for page: ${this.cssPath}`);
@@ -43,4 +43,4 @@ Palette.prototype.saveCss = function () {
 
 
 
-module.exports = Palette;
+module.exports = PangPalette;

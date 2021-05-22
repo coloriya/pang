@@ -1,6 +1,6 @@
 
-const PalpngApp = require("./palpng");
-const app = new PalpngApp();
+const PangApp = require("./palpng");
+const app = new PangApp();
 
 const argv = process.argv;
 const command = argv[2] ? argv[2].toLowerCase() : null;

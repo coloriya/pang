@@ -4,7 +4,7 @@ const path = require("path");
 
 
 
-function Page (app, number) {
+function PangPage (app, number) {
 	this.app = app;
 	this.number = number;
 
@@ -30,7 +30,7 @@ function Page (app, number) {
 
 
 
-Page.prototype.getCssText = function () {
+PangPage.prototype.getCssText = function () {
 	let cssText = "";
 	for (let palette of this.palettes) {
 		cssText += palette.getCssText();
@@ -38,7 +38,7 @@ Page.prototype.getCssText = function () {
 	return cssText;
 }
 
-Page.prototype.saveCss = function () {
+PangPage.prototype.saveCss = function () {
 	let cssText = this.getCssText();
 	fs.writeFileSync(this.cssPath, cssText);
 	console.log(`\tSaved CSS for page: ${this.cssPath}`);
@@ -46,7 +46,7 @@ Page.prototype.saveCss = function () {
 
 
 
-Page.prototype.consoleLog = function () {
+PangPage.prototype.consoleLog = function () {
 	console.log(`Page ${this.number} (${this.palettes.length} palettes):`);
 	console.log(`\tHTML: ${this.htmlPath}`);
 	console.log(`\t CSS: ${this.cssPath}`);
@@ -54,4 +54,4 @@ Page.prototype.consoleLog = function () {
 
 
 
-module.exports = Page;
+module.exports = PangPage;
