@@ -45,6 +45,7 @@ for (let x = 1; x <= numberOfPages; x++) {
 	page.dirPath = `docs/${page.path}`;
 	page.htmlPath = `${page.dirPath}/index.html`;
 	page.baseDepth = (x == 1) ? 0 : 2;
+	page.cssPath = `docs/dist/css/pages/${x}.css`;
 
 	let start = numberOfPalettesOnAPage * (x - 1);
 	let end = start + numberOfPalettesOnAPage;
@@ -67,6 +68,18 @@ for (let page of pages) {
 		gaText: gaText
 	}));
 	console.log(`\tRendered: (${page.htmlPath})`);
+
+	let cssText = "";
+	for (let palette of page.palettes) {	
+		for (let index in palette.colors) {
+			let color = palette.colors[index];
+			cssText += `.pyp${palette.id}${alphabet[index]} {background: ${color.hex};}\n`;
+		}
+		cssText += "\n\n";
+	}
+
+	fs.writeFileSync(page.cssPath, cssText);
+	console.log(`Saved: ${page.cssPath}`);
 }
 
 
