@@ -12,7 +12,7 @@ function PangApp () {
 	this.paths = this.preferences.paths;
 	this.gaText = fs.readFileSync(this.paths.analytics, 'utf8');
 	this.alphabet = "abcdefghijklmnopqrstuvwxyz";
-	this.nl = "\n";
+	this.nl = "<!-- \n -->";
 
 	this.setupPalettes();
 	this.setupPages();
