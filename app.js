@@ -3,6 +3,7 @@ const PalpngApp = require("./palpng");
 const app = new PalpngApp();
 
 app.consoleLog();
+app.pages[1].saveCss();
 
 process.exit();
 
@@ -11,7 +12,7 @@ const pug = require("pug");
 
 const pypalettes = JSON.parse(fs.readFileSync("data/palettes.json"));
 const palettes = pypalettes.palettes;
-const alphabet = "abcdefghijklmnopqrstuvwxyz"
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 const gaText = fs.readFileSync("src/txt/analytics.html", 'utf8');
 
@@ -85,18 +86,6 @@ for (let page of pages) {
 		gaText: gaText
 	}));
 	console.log(`\tRendered: (${page.htmlPath})`);
-
-	let cssText = "";
-	for (let palette of page.palettes) {
-		for (let index in palette.colors) {
-			let color = palette.colors[index];
-			cssText += `.pyp${palette.id}${alphabet[index]} {background: ${color.hex};}\n`;
-		}
-		cssText += "\n\n";
-	}
-
-	fs.writeFileSync(page.cssPath, cssText);
-	console.log(`Saved: ${page.cssPath}`);
 }
 
 

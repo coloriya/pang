@@ -10,6 +10,7 @@ function PalpngApp () {
 	this.preferences = JSON.parse(fs.readFileSync("preferences.json"));
 	this.paths = this.preferences.paths;
 	this.gaText = fs.readFileSync(this.paths.analytics, 'utf8');
+	this.alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 	this.setupPalettes();
 	this.setupPages();
