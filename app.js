@@ -13,6 +13,13 @@ switch (command) {
 	case "css":
 		app.saveCss();
 		break;
+	case "pagescss":
+		app.savePageCss();
+		break;
+	case "palscss":
+	case "palettescss":
+		app.savePaletteCss();
+		break;
 	default:
 		console.log(`Unknown command: '${command}'`);
 }
