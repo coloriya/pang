@@ -1,5 +1,7 @@
 {
 	"paths": {
+		"palettes": "data/palettes.json",
+		"analytics": "src/txt/analytics.html",
 		"data": "data",
 		"templates": "src/pug",
 		"output": "docs"

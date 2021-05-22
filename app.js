@@ -1,4 +1,11 @@
 
+const PalpngApp = require("./palpng");
+const app = new PalpngApp();
+
+
+
+process.exit();
+
 const fs = require("fs");
 const pug = require("pug");
 
