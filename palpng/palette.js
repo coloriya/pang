@@ -2,6 +2,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const PangColor = require("./color");
+
 
 
 function PangPalette (app, json) {
@@ -16,6 +18,13 @@ function PangPalette (app, json) {
 		this.prev.next = this;
 	}
 
+	this.colors = [];
+	for (let index in this.json.colors) {
+		let colorJson = this.json.colors[index];
+		let color = new PangColor(this, colorJson, index);
+		this.colors.push(color);
+	}
+
 	this.relativeURL = `palette/${this.number}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 
@@ -27,9 +36,8 @@ function PangPalette (app, json) {
 
 PangPalette.prototype.getCssText = function () {
 	let cssText = "";
-	for (let index in this.json.colors) {
-		let color = this.json.colors[index];
-		cssText += `.pyp${this.id}${this.app.alphabet[index]} {background: ${color.hex};}\n`;
+	for (let color of this.colors) {
+		cssText += color.getCssText();
 	}
 	cssText += "\n\n";
 	return cssText;
