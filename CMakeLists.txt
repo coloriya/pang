@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(squares)
+project(pang)
 
 set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 
-add_executable(squares cpp/squares.cpp)
+add_executable(pang cpp/pang.cpp)
 
 
