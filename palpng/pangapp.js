@@ -93,6 +93,25 @@ PangApp.prototype.saveCss = function () {
 
 
 
+PangApp.prototype.savePageHtml = function () {
+	for (let page of this.pages) {
+		page.saveHtml();
+	}
+}
+
+PangApp.prototype.savePaletteHtml = function () {
+	for (let palette of this.palettes) {
+		palette.saveHtml();
+	}
+}
+
+PangApp.prototype.saveHtml = function () {
+	this.savePageHtml();
+	this.savePaletteHtml();
+}
+
+
+
 PangApp.prototype.consoleLog = function () {
 	console.log(`\t(${this.getNumberOfPages()} pages)`);
 	console.log(`\t(${this.getNumberOfPalettes()} palettes)`);
