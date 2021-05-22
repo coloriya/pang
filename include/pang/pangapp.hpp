@@ -11,9 +11,12 @@ namespace fs = std::filesystem;
 namespace nj = nlohmann;
 
 namespace pang {
+	class Palette;
+
 	class App
 	{
-		class Palette;
+		nj::json args_json;
+		nj::json palettes_json;
 
 		std::string name;
 		std::vector<Palette*> palettes;

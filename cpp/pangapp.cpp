@@ -16,23 +16,24 @@ pang::App::App ()
 	}
 
 	std::ifstream args_fs(args_path);
-	auto jo = nj::json::parse(args_fs);
+	this->args_json = nj::json::parse(args_fs);
 
-	auto paletts_path = jo["paths"]["palettes"];
+	auto paletts_path = this->args_json["paths"]["palettes"];
 	std::ifstream paletts_fs(paletts_path);
-	auto pjo = nj::json::parse(paletts_fs);
+	this->palettes_json = nj::json::parse(paletts_fs);
 
-	for (auto pj : pjo["palettes"]) {
-		for (auto color_json : pj["colors"]) {
-			std::cout << color_json << "\n";
-		}
-		break;
+	for (auto pj : this->palettes_json["palettes"]) {
+		auto palette = new pang::Palette(this, pj);
+		this->palettes.push_back(palette);
 	}
 }
 
 pang::App::~App ()
 {
-	//
+	for (auto palette : this->palettes)
+	{
+		delete palette;
+	}
 }
 
 
