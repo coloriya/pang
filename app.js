@@ -2,7 +2,7 @@
 const PalpngApp = require("./palpng");
 const app = new PalpngApp();
 
-
+app.consoleLog();
 
 process.exit();
 

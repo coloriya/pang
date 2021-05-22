@@ -33,7 +33,6 @@ PalpngApp.prototype.setupPages = function () {
 	for (let pageNumber = 1; pageNumber <= this.numberOfPages; pageNumber++) {
 		let page = new Page(this, pageNumber);
 		this.pages.push(page);
-		page.consoleLog();
 	}
 }
 
@@ -51,6 +50,23 @@ PalpngApp.prototype.getLastPalette = function () {
 		return this.palettes[this.palettes.length - 1];
 	}
 	return null;
+}
+
+
+
+PalpngApp.prototype.getNumberOfPages = function () {
+	return this.pages.length;
+}
+
+PalpngApp.prototype.getNumberOfPalettes = function () {
+	return this.palettes.length;
+}
+
+
+
+PalpngApp.prototype.consoleLog = function () {
+	console.log(`\t(${this.getNumberOfPages()} pages)`);
+	console.log(`\t(${this.getNumberOfPalettes()} palettes)`);
 }
 
 
