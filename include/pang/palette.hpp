@@ -1,0 +1,8 @@
+#ifndef PANG_PALETTE_IS_INCLUDED
+#define PANG_PALETTE_IS_INCLUDED
+
+
+
+
+
+#endif

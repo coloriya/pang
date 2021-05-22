@@ -1,3 +1,6 @@
+#ifndef PANG_RESOLUTION_IS_INCLUDED
+#define PANG_RESOLUTION_IS_INCLUDED
+
 #include <iostream>
 
 class Resolution {
@@ -6,3 +9,6 @@ class Resolution {
 	std::string name;
 };
 
+
+
+#endif

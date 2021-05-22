@@ -1,0 +1,8 @@
+#ifndef PANG_COLOR_IS_INCLUDED
+#define PANG_COLOR_IS_INCLUDED
+
+
+
+
+
+#endif
