@@ -8,5 +8,6 @@ include_directories(include)
 
 file(GLOB pang_srcs cpp/*.cpp)
 add_executable(pang ${pang_srcs})
+target_link_libraries(pang png)
 
 

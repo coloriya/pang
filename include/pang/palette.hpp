@@ -7,6 +7,8 @@
 
 #include <nlohmann/json.hpp>
 
+#include <png.h>
+
 namespace fs = std::filesystem;
 namespace nj = nlohmann;
 
@@ -34,6 +36,8 @@ namespace pang {
 		void produceBarsPng (Resolution *resolution);
 		void produceSlabsPng (Resolution *resolution);
 		void produceSquaresPng (Resolution *resolution);
+
+		void colorRow(png_bytep row, int width);
 	};
 };
 
