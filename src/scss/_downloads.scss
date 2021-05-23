@@ -1,0 +1,26 @@
+
+div.downloads {
+	margin: auto 40px;
+	& > div.title {
+		//
+	}
+	& > div.content {
+		//
+	}
+}
+
+div.downloads > div.content > table {
+	border-collapse: collapse;
+	tr {
+		& > td {
+			padding: 10px 10px 8px;
+			border: 1px solid #ddd;
+			border-color: #aaa #ddd;
+			&.name {
+				min-width: 120px;
+			}
+		}
+	}
+}
+
+

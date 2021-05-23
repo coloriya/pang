@@ -83,3 +83,18 @@ div.pagination > a {
   margin-right: -1px;
   margin-bottom: -1px;
 }
+
+div.downloads {
+  margin: auto 40px;
+}
+div.downloads > div.content > table {
+  border-collapse: collapse;
+}
+div.downloads > div.content > table tr > td {
+  padding: 10px 10px 8px;
+  border: 1px solid #ddd;
+  border-color: #aaa #ddd;
+}
+div.downloads > div.content > table tr > td.name {
+  min-width: 120px;
+}
