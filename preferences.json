@@ -27,6 +27,10 @@
 		{
 			"name": "squares",
 			"title": "Squares"
+		},
+		{
+			"name": "squares_on_white",
+			"title": "Squares on White"
 		}
 	]
 }

@@ -50,14 +50,15 @@ block content
 		div.content
 			table.downloads
 				each download in downloads
-					| !{app.nl}
-					tr(class=download.getRes())
-						td.name= download.getName()
-						td.res= download.getRes()
-						td.resx= download.getResX()
+					if download.exists()
 						| !{app.nl}
-						td.size= download.getSizeKB()
-						td.url
-							a(href=download.getRelativeURL()) Download
+						tr(class=download.getRes())
+							td.name= download.getName()
+							td.res= download.getRes()
+							td.resx= download.getResX()
+							| !{app.nl}
+							td.size= download.getSizeKB()
+							td.url
+								a(href=download.getRelativeURL()) Download
 
 

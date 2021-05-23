@@ -40,6 +40,13 @@ PangDownload.prototype.getResX = function () {
 	return this.resolution.getNameX();
 }
 
+PangDownload.prototype.exists = function () {
+	if (fs.existsSync(this.getPath())) {
+		return true;
+	}
+	return false;
+}
+
 PangDownload.prototype.getSize = function () {
 	if (fs.existsSync(this.getPath())) {
 		return fs.statSync(this.getPath()).size;
