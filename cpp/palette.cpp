@@ -3,6 +3,7 @@
 #include "pang/pangapp.hpp"
 #include "pang/color.hpp"
 #include "pang/resolution.hpp"
+#include "pang/pngwriter.hpp"
 
 #include <string>
 
@@ -83,45 +84,20 @@ void pang::Palette::produceBarsPng (Resolution *resolution)
 		return;
 	}
 
+	pang::PngWriter png_writer {resolution, png_path};
 	int width = resolution->getWidth();
 	int height = resolution->getHeight();
 
-	FILE *fp = NULL;
-	png_structp png_ptr = NULL;
-	png_infop info_ptr = NULL;
 	png_bytep row = NULL;
-
-	std::string filepath = png_path;
-	fp = fopen(filepath.data(), "wb");
-	if (fp == NULL) {goto finalise;}
-
-	png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-	if (png_ptr == NULL) {goto finalise;}
-
-	info_ptr = png_create_info_struct(png_ptr);
-	if (info_ptr == NULL) {goto finalise;}
-
-	if (setjmp(png_jmpbuf(png_ptr))) {goto finalise;}
-
-	png_init_io(png_ptr, fp);
-	png_set_IHDR(png_ptr, info_ptr, width, height, 8, 
-		PNG_COLOR_TYPE_RGB, PNG_INTERLACE_NONE, 
-		PNG_COMPRESSION_TYPE_BASE, PNG_FILTER_TYPE_BASE);
-	png_write_info(png_ptr, info_ptr);
-	row = (png_bytep) malloc(3 * width * sizeof(png_byte));
+	row = (png_bytep) std::malloc(3 * width * sizeof(png_byte));
 
 	this->colorRow(row, width);
 	for (int y = 0; y < height; y++) {
-		png_write_row(png_ptr, row);
+		png_writer.write(row);
 	}
 
-	png_write_end(png_ptr, NULL);
-
-	finalise:
-	if (fp != NULL) {fclose(fp);}
-	if (info_ptr != NULL) {png_free_data(png_ptr, info_ptr, PNG_FREE_ALL, -1);}
-	if (png_ptr != NULL) {png_destroy_write_struct(&png_ptr, &info_ptr);}
-	if (row != NULL) {free(row);}
+	png_writer.save();
+	std::free(row);
 	std::cout << "\tsaved: (" << png_path << ")\n";
 }
 
