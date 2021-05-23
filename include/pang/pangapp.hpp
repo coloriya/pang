@@ -15,6 +15,8 @@ namespace pang {
 
 	class App
 	{
+		friend class Palette;
+
 		nj::json args_json;
 		nj::json palettes_json;
 
@@ -23,6 +25,7 @@ namespace pang {
 	public:
 		App();
 		~App();
+		void producePngs();
 		void consoleLog();
 	};
 };

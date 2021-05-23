@@ -13,6 +13,7 @@ int main (int argc, char const *argv[])
 {
 	pang::App app;
 	app.consoleLog();
+	app.producePngs();
 
 	return 0;
 }

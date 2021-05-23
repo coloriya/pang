@@ -38,6 +38,15 @@ pang::App::~App ()
 
 
 
+void pang::App::producePngs ()
+{
+	for (auto palette : this->palettes)
+	{
+		palette->producePngs();
+		break;
+	}
+}
+
 void pang::App::consoleLog ()
 {
 	std::cout << "(" << this->palettes.size() << " palettes)\n";
