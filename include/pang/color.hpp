@@ -5,6 +5,8 @@
 
 #include <nlohmann/json.hpp>
 
+#include <png.h>
+
 namespace nj = nlohmann;
 
 namespace pang {
@@ -15,6 +17,10 @@ namespace pang {
 
 		Palette *palette;
 		nj::json json;
+
+		int r;
+		int g;
+		int b;
 	public:
 		Color(Palette *palette, nj::json json);
 		~Color();
@@ -22,6 +28,8 @@ namespace pang {
 		int getR();
 		int getG();
 		int getB();
+
+		void colorRow(png_bytep row, int width);
 	};
 };
 

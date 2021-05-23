@@ -46,8 +46,8 @@ fs::path pang::Palette::getPngPath (std::string design_name, Resolution *resolut
 void pang::Palette::producePngs (Resolution *resolution)
 {
 	this->produceBarsPng(resolution);
-	return;
 	this->produceSlabsPng(resolution);
+	return;
 	this->produceSquaresPng(resolution);
 }
 
@@ -112,6 +112,27 @@ void pang::Palette::produceSlabsPng (Resolution *resolution)
 		return;
 	}
 
+	pang::PngWriter png_writer {resolution, png_path};
+	int width = resolution->getWidth();
+	int height = resolution->getHeight();
+
+	png_bytep row = NULL;
+	row = (png_bytep) std::malloc(3 * width * sizeof(png_byte));
+
+	int slab_height = ceil(height / this->colors.size());
+	this->colors[0]->colorRow(row, width);
+	for (int y = 0; y < height; y++) {
+		int slab_index = y / slab_height;
+		int offset = y % slab_height;
+		if (offset == 0)
+		{
+			this->colors[slab_index]->colorRow(row, width);
+		}
+		png_writer.write(row);
+	}
+
+	png_writer.save();
+	std::free(row);
 	std::cout << "\tsaved: (" << png_path << ")\n";
 }
 
