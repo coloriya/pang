@@ -168,7 +168,7 @@ void pang::Palette::produceSquaresPng (Resolution *resolution)
 
 	for (int y = 0; y < height; y++) {
 		int offset = y % square_height;
-		if (offset == 0)
+		if (y > 0 && offset == 0)
 		{
 			row += square_width * 3;
 		}
