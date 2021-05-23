@@ -49,6 +49,18 @@ bool pang::PngWriter::isok ()
 	return this->ok;
 }
 
+int pang::PngWriter::getHeight ()
+{
+	return this->height;
+}
+
+int pang::PngWriter::getWidth ()
+{
+	return this->width;
+}
+
+
+
 void pang::PngWriter::write (png_bytep row)
 {
 	png_write_row(this->png_ptr, row);

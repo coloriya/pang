@@ -85,8 +85,8 @@ void pang::Palette::produceBarsPng (Resolution *resolution)
 	}
 
 	pang::PngWriter png_writer {resolution, png_path};
-	int width = resolution->getWidth();
-	int height = resolution->getHeight();
+	int width = png_writer.getWidth();
+	int height = png_writer.getHeight();
 
 	png_bytep row = NULL;
 	row = (png_bytep) std::malloc(3 * width * sizeof(png_byte));
@@ -113,8 +113,8 @@ void pang::Palette::produceSlabsPng (Resolution *resolution)
 	}
 
 	pang::PngWriter png_writer {resolution, png_path};
-	int width = resolution->getWidth();
-	int height = resolution->getHeight();
+	int width = png_writer.getWidth();
+	int height = png_writer.getHeight();
 
 	png_bytep row = NULL;
 	row = (png_bytep) std::malloc(3 * width * sizeof(png_byte));

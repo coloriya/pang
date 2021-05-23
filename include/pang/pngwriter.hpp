@@ -32,6 +32,9 @@ namespace pang
 
 		bool isok();
 
+		int getHeight();
+		int getWidth();
+
 		void write(png_bytep row);
 		void save();
 	};
