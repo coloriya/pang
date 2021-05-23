@@ -3,6 +3,8 @@ const fs = require("fs");
 
 const PangPalette = require("./palette");
 const PangPage = require("./page");
+const PangDownloadable = require("./downloadable");
+
 const PangTemplate = require("./template");
 
 
@@ -16,6 +18,7 @@ function PangApp () {
 
 	this.setupPalettes();
 	this.setupPages();
+	this.setupDownloadables();
 	this.setupTemplates();
 }
 
@@ -37,6 +40,14 @@ PangApp.prototype.setupPages = function () {
 	for (let pageNumber = 1; pageNumber <= this.numberOfPages; pageNumber++) {
 		let page = new PangPage(this, pageNumber);
 		this.pages.push(page);
+	}
+}
+
+PangApp.prototype.setupDownloadables = function () {
+	this.downloadables = [];
+	for (let json of this.preferences.downloadables) {
+		let downloadable = new PangDownloadable(this, json);
+		this.downloadables.push(downloadable);
 	}
 }
 
@@ -71,6 +82,10 @@ PangApp.prototype.getNumberOfPages = function () {
 
 PangApp.prototype.getNumberOfPalettes = function () {
 	return this.palettes.length;
+}
+
+PangApp.prototype.getNumberOfDownloadables = function () {
+	return this.downloadables.length;
 }
 
 
@@ -116,6 +131,7 @@ PangApp.prototype.saveHtml = function () {
 PangApp.prototype.consoleLog = function () {
 	console.log(`\t(${this.getNumberOfPages()} pages)`);
 	console.log(`\t(${this.getNumberOfPalettes()} palettes)`);
+	console.log(`\t(${this.getNumberOfDownloadables()} downloadables)`);
 }
 
 

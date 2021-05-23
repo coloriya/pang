@@ -4,12 +4,28 @@
 		"analytics": "src/txt/analytics.html",
 		"data": "data",
 		"templates": "src/pug",
-		"output": "docs"
+		"output": "docs",
+		"downloadables": "dist/img/palettes"
 	},
 
 	"pageLength": 20,
 
 	"meta": {
 		"title": "pang"
-	}
+	},
+
+	"downloadables": [
+		{
+			"name": "bars",
+			"title": "Bars"
+		},
+		{
+			"name": "slabs",
+			"title": "Slabs"
+		},
+		{
+			"name": "squares",
+			"title": "Squares"
+		}
+	]
 }
