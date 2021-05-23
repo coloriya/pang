@@ -43,6 +43,10 @@ PangPalette.prototype.getBaseDepth = function () {
 	return 2;
 }
 
+PangPalette.prototype.getRelativeURL = function () {
+	return this.relativeURL;
+}
+
 
 
 PangPalette.prototype.getDownloads = function () {

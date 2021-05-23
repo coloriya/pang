@@ -12,7 +12,11 @@
 	"pageLength": 20,
 
 	"meta": {
-		"title": "pang"
+		"title": "pang",
+		"author": {
+			"name": "Ankur Seth",
+			"website": "https://ankurseth.in"
+		}
 	},
 
 	"downloadables": [

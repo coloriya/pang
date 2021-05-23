@@ -41,6 +41,12 @@ PangPage.prototype.getBaseDepth = function () {
 	return 2;
 }
 
+PangPage.prototype.getRelativeURL = function () {
+	return this.relativeURL;
+}
+
+
+
 PangPage.prototype.getCssText = function () {
 	let cssText = "";
 	for (let palette of this.palettes) {
