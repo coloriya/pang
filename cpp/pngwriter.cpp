@@ -40,6 +40,11 @@ pang::PngWriter::~PngWriter()
 	if (this->info_ptr != NULL) {png_free_data(this->png_ptr, this->info_ptr, PNG_FREE_ALL, -1);}
 	if (this->png_ptr != NULL) {png_destroy_write_struct(&this->png_ptr, &this->info_ptr);}
 	if (this->row != NULL) {free(this->row);}
+
+	for (auto da_row : this->da_rows)
+	{
+		std::free(da_row);
+	}
 }
 
 
@@ -57,6 +62,14 @@ int pang::PngWriter::getHeight ()
 int pang::PngWriter::getWidth ()
 {
 	return this->width;
+}
+
+png_bytep pang::PngWriter::getRow ()
+{
+	png_bytep row = NULL;
+	row = (png_bytep) std::malloc(3 * this->width * sizeof(png_byte));
+	this->da_rows.push_back(row);
+	return row;
 }
 
 

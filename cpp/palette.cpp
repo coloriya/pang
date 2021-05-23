@@ -88,8 +88,7 @@ void pang::Palette::produceBarsPng (Resolution *resolution)
 	int width = png_writer.getWidth();
 	int height = png_writer.getHeight();
 
-	png_bytep row = NULL;
-	row = (png_bytep) std::malloc(3 * width * sizeof(png_byte));
+	auto row = png_writer.getRow();
 
 	this->colorRow(row, width);
 	for (int y = 0; y < height; y++) {
@@ -97,7 +96,6 @@ void pang::Palette::produceBarsPng (Resolution *resolution)
 	}
 
 	png_writer.save();
-	std::free(row);
 	std::cout << "\tsaved: (" << png_path << ")\n";
 }
 
@@ -116,8 +114,7 @@ void pang::Palette::produceSlabsPng (Resolution *resolution)
 	int width = png_writer.getWidth();
 	int height = png_writer.getHeight();
 
-	png_bytep row = NULL;
-	row = (png_bytep) std::malloc(3 * width * sizeof(png_byte));
+	auto row = png_writer.getRow();
 
 	int slab_height = ceil(height / this->colors.size());
 	this->colors[0]->colorRow(row, width);
@@ -132,7 +129,6 @@ void pang::Palette::produceSlabsPng (Resolution *resolution)
 	}
 
 	png_writer.save();
-	std::free(row);
 	std::cout << "\tsaved: (" << png_path << ")\n";
 }
 

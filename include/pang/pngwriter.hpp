@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <filesystem>
+#include <vector>
 
 #include <png.h>
 
@@ -26,6 +27,8 @@ namespace pang
 		png_structp png_ptr = NULL;
 		png_infop info_ptr = NULL;
 		png_bytep row = NULL;
+
+		std::vector<png_bytep> da_rows;
 	public:
 		PngWriter(Resolution *resolution, fs::path png_path);
 		~PngWriter();
@@ -34,6 +37,8 @@ namespace pang
 
 		int getHeight();
 		int getWidth();
+
+		png_bytep getRow();
 
 		void write(png_bytep row);
 		void save();
