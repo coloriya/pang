@@ -133,7 +133,7 @@ PangApp.prototype.savePageHtml = function () {
 PangApp.prototype.savePaletteHtml = function () {
 	for (let palette of this.palettes) {
 		palette.saveHtml();
-		break; // while I test
+		// break; // while I test
 	}
 }
 
