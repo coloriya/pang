@@ -46,14 +46,16 @@ PangPalette.prototype.getBaseDepth = function () {
 
 
 PangPalette.prototype.getDownloads = function () {
-	let downloads = [];
-	for (let resolution of this.app.resolutions) {
-		for (let downloadable of this.app.downloadables) {
-			let download = new PangDownload(this, downloadable, resolution);
-			downloads.push(download);
+	if (!this.downloads) {
+		this.downloads = [];
+		for (let resolution of this.app.resolutions) {
+			for (let downloadable of this.app.downloadables) {
+				let download = new PangDownload(this, downloadable, resolution);
+				this.downloads.push(download);
+			}
 		}
 	}
-	return downloads;
+	return this.downloads;
 }
 
 
