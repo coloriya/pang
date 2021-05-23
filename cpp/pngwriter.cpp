@@ -66,8 +66,13 @@ int pang::PngWriter::getWidth ()
 
 png_bytep pang::PngWriter::getRow ()
 {
+	return this->getRow(1);
+}
+
+png_bytep pang::PngWriter::getRow (int n)
+{
 	png_bytep row = NULL;
-	row = (png_bytep) std::malloc(3 * this->width * sizeof(png_byte));
+	row = (png_bytep) std::malloc(3 * this->width * n * sizeof(png_byte));
 	this->da_rows.push_back(row);
 	return row;
 }

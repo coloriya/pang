@@ -39,6 +39,7 @@ namespace pang
 		int getWidth();
 
 		png_bytep getRow();
+		png_bytep getRow(int n);
 
 		void write(png_bytep row);
 		void save();

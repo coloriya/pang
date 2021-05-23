@@ -47,8 +47,8 @@ void pang::Palette::producePngs (Resolution *resolution)
 {
 	this->produceBarsPng(resolution);
 	this->produceSlabsPng(resolution);
-	return;
 	this->produceSquaresPng(resolution);
+	return;
 }
 
 
@@ -142,6 +142,40 @@ void pang::Palette::produceSquaresPng (Resolution *resolution)
 		std::cout << "\texists: (" << png_path << ")\n";
 		return;
 	}
+
+	pang::PngWriter png_writer {resolution, png_path};
+	int width = png_writer.getWidth();
+	int height = png_writer.getHeight();
+
+	auto row = png_writer.getRow(2);
+
+	int row_width = width * 2;
+	int square_height = ceil(height / 9);
+	int square_width = ceil(width / 16);
+
+	Color *color;
+	for (int x=0; x<row_width; x++)
+	{
+		if (x % square_width == 0)
+		{
+			int color_index = (x / square_width) % this->colors.size();
+			color = this->colors[color_index];
+		}
+		row[x*3] = color->getR();
+		row[x*3 + 1] = color->getG();
+		row[x*3 + 2] = color->getB();
+	}
+
+	for (int y = 0; y < height; y++) {
+		int offset = y % square_height;
+		if (offset == 0)
+		{
+			row += square_width * 3;
+		}
+		png_writer.write(row);
+	}
+
+	png_writer.save();
 
 	std::cout << "\tsaved: (" << png_path << ")\n";
 }
