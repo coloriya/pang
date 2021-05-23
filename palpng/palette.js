@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const PangColor = require("./color");
+const PangDownload = require("./download");
 
 
 
@@ -44,6 +45,19 @@ PangPalette.prototype.getBaseDepth = function () {
 
 
 
+PangPalette.prototype.getDownloads = function () {
+	let downloads = [];
+	for (let resolution of this.app.resolutions) {
+		for (let downloadable of this.app.downloadables) {
+			let download = new PangDownload(this, downloadable, resolution);
+			downloads.push(download);
+		}
+	}
+	return downloads;
+}
+
+
+
 PangPalette.prototype.getCssText = function () {
 	let cssText = "";
 	for (let color of this.colors) {
@@ -64,7 +78,8 @@ PangPalette.prototype.saveHtml = function () {
 	fs.writeFileSync(this.htmlPath, template({
 		me: this,
 		palette: this,
-		app: this.app
+		app: this.app,
+		downloads: this.getDownloads()
 	}));
 	console.log(`\tSaved HTML for palette: ${this.htmlPath}`);
 }

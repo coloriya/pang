@@ -15,6 +15,10 @@ PangResolution.prototype.getName = function () {
 	return this.name;
 }
 
+PangResolution.prototype.getNameX = function () {
+	return `${this.width}x${this.height}`;
+}
+
 PangResolution.prototype.getHeight = function () {
 	return this.height;
 }
