@@ -44,7 +44,51 @@ fs::path pang::Palette::getPngPath (std::string design_name, Resolution *resolut
 
 void pang::Palette::producePngs (Resolution *resolution)
 {
+	this->produceBarsPng(resolution);
+	return;
+	this->produceSlabsPng(resolution);
+	this->produceSquaresPng(resolution);
+}
+
+
+
+void pang::Palette::produceBarsPng (Resolution *resolution)
+{
+	auto png_path = this->getPngPath("bars", resolution);
+	if (fs::exists(png_path))
+	{
+		std::cout << "\texists: (" << png_path << ")\n";
+		return;
+	}
+
+	std::cout << "\tsaved: (" << png_path << ")\n";
+}
+
+
+
+void pang::Palette::produceSlabsPng (Resolution *resolution)
+{
+	auto png_path = this->getPngPath("slabs", resolution);
+	if (fs::exists(png_path))
+	{
+		std::cout << "\texists: (" << png_path << ")\n";
+		return;
+	}
+
+	std::cout << "\tsaved: (" << png_path << ")\n";
+}
+
+
+
+void pang::Palette::produceSquaresPng (Resolution *resolution)
+{
 	auto png_path = this->getPngPath("squares", resolution);
+	if (fs::exists(png_path))
+	{
+		std::cout << "\texists: (" << png_path << ")\n";
+		return;
+	}
+
 	std::cout << "\tsaved: (" << png_path << ")\n";
 }
 

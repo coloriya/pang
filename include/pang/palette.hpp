@@ -30,6 +30,10 @@ namespace pang {
 
 		fs::path getPngPath(std::string design_name, Resolution *resolution);
 		void producePngs(Resolution *resolution);
+
+		void produceBarsPng (Resolution *resolution);
+		void produceSlabsPng (Resolution *resolution);
+		void produceSquaresPng (Resolution *resolution);
 	};
 };
 

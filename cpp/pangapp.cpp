@@ -56,6 +56,7 @@ void pang::App::producePngs ()
 		for (auto resolution : this->resolutions)
 		{
 			palette->producePngs(resolution);
+			break;
 		}
 		break;
 	}
