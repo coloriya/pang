@@ -23,6 +23,7 @@ namespace pang {
 
 		int getHeight();
 		int getWidth();
+		std::string getName();
 		std::string getSuffix();
 	};
 };

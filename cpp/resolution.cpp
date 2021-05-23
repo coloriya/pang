@@ -29,6 +29,11 @@ int pang::Resolution::getWidth ()
 	return this->width;
 }
 
+std::string pang::Resolution::getName ()
+{
+	return this->name;
+}
+
 std::string pang::Resolution::getSuffix ()
 {
 	return this->name;
