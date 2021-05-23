@@ -1,0 +1,96 @@
+
+body {
+	margin: 0;
+	font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;;
+	background-color: #f7f7f7;
+}
+
+header.pyp-header, footer.pyp-footer {
+	background-color: #333;
+	color: #fff;
+	padding: 50px;
+	text-align: center;
+}
+
+header.pyp-header {
+	padding-top: 60px;
+}
+
+content.pyp-content {
+	display: block;
+	padding: 50px 10px;
+}
+
+div.palette {
+	display: block;
+	margin: 40px 60px;
+	margin-bottom: 100px;
+	& > div.title {
+		& > h2 {
+			& > a {
+				text-decoration: none;
+				color: #000;
+			}
+		}
+	}
+	& > div.colors {
+		& > div {
+			display: inline-block;
+			width: 100px;
+			background-color: #fff;
+			&:nth-child(even) {
+				background-color: #eee;
+			}
+			& > p {
+				margin: 0;
+				height: 70px;
+			}
+			& > b {
+				text-align: center;
+				display: block;
+				padding: 10px;
+			}
+		}
+	}
+}
+
+
+
+div.palette-detail {
+	margin: 60px auto;
+	text-align: center;
+	& > div.column {
+		display: inline-block;
+		width: 100px;
+		margin-right: -1px;
+		&.header {
+			width: 40px;
+		}
+		& > b {
+			display: block;
+			padding: 10px;
+			border: 1px solid #000;
+			margin-bottom: -1px;
+		}
+		& > b.c {
+			height: 60px;
+		}
+	}
+}
+
+div.pagination {
+	text-align: center;
+	padding: 50px;
+	& > a {
+		display: inline-block;
+		background-color: #fff;
+		color: #222;
+		font-weight: bold;
+		padding: 10px 10px;
+		border: 1px solid #777;
+		margin-right: -1px;
+		margin-bottom: -1px;
+	}
+}
+
+
