@@ -45,6 +45,7 @@ fs::path pang::Palette::getPngPath (std::string design_name, Resolution *resolut
 
 void pang::Palette::producePngs (Resolution *resolution)
 {
+
 	this->produceBarsPng(resolution);
 	this->produceSlabsPng(resolution);
 	this->produceSquaresPng(resolution);
@@ -56,7 +57,7 @@ void pang::Palette::producePngs (Resolution *resolution)
 void pang::Palette::colorRow(png_bytep row, int width)
 {
 	int number_of_colors = this->colors.size();
-	int bar_width = width / number_of_colors;
+	int bar_width = ceil(1.0 * width / number_of_colors);
 	auto color = this->colors[0];
 	for (int x=0; x<width; x++)
 	{
