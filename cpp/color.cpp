@@ -14,6 +14,13 @@ pang::Color::Color (Palette *palette, nj::json json)
 	this->b = this->json["rgb"][2];
 }
 
+pang::Color::Color (int r, int g, int b)
+{
+	this->r = r;
+	this->g = g;
+	this->b = b;
+}
+
 pang::Color::~Color ()
 {
 	//

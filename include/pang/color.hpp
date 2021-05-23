@@ -23,6 +23,7 @@ namespace pang {
 		int b;
 	public:
 		Color(Palette *palette, nj::json json);
+		Color(int r, int g, int b);
 		~Color();
 
 		int getR();
