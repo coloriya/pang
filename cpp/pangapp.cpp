@@ -3,6 +3,7 @@
 #include <fstream>
 
 #include "pang/palette.hpp"
+#include "pang/resolution.hpp"
 
 
 
@@ -17,6 +18,11 @@ pang::App::App ()
 
 	std::ifstream args_fs(args_path);
 	this->args_json = nj::json::parse(args_fs);
+
+	for (auto rj : this->args_json["resolutions"]) {
+		auto resolution = new pang::Resolution(this, rj);
+		this->resolutions.push_back(resolution);
+	}
 
 	auto paletts_path = this->args_json["paths"]["palettes"];
 	std::ifstream paletts_fs(paletts_path);
@@ -42,7 +48,10 @@ void pang::App::producePngs ()
 {
 	for (auto palette : this->palettes)
 	{
-		palette->producePngs();
+		for (auto resolution : this->resolutions)
+		{
+			palette->producePngs(resolution);
+		}
 		break;
 	}
 }

@@ -13,6 +13,7 @@ namespace nj = nlohmann;
 namespace pang {
 	class App;
 	class Color;
+	class Resolution;
 
 	class Palette
 	{
@@ -27,8 +28,8 @@ namespace pang {
 		Palette(App *app, nj::json json);
 		~Palette();
 
-		fs::path getPngPath(std::string design_name);
-		void producePngs();
+		fs::path getPngPath(std::string design_name, Resolution *resolution);
+		void producePngs(Resolution *resolution);
 	};
 };
 

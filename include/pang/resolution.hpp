@@ -3,10 +3,28 @@
 
 #include <iostream>
 
-class Resolution {
-	int height;
-	int width;
-	std::string name;
+#include <nlohmann/json.hpp>
+
+namespace nj = nlohmann;
+
+namespace pang {
+	class App;
+
+	class Resolution {
+		App *app;
+		int height;
+		int width;
+		std::string name;
+		std::string suffix;
+
+	public:
+		Resolution(App *app, nj::json json);
+		~Resolution();
+
+		int getHeight();
+		int getWidth();
+		std::string getSuffix();
+	};
 };
 
 

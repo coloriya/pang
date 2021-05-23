@@ -12,6 +12,7 @@ namespace nj = nlohmann;
 
 namespace pang {
 	class Palette;
+	class Resolution;
 
 	class App
 	{
@@ -22,6 +23,7 @@ namespace pang {
 
 		std::string name;
 		std::vector<Palette*> palettes;
+		std::vector<Resolution*> resolutions;
 	public:
 		App();
 		~App();
