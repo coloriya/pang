@@ -5,7 +5,8 @@
 		"data": "data",
 		"templates": "src/pug",
 		"output": "docs",
-		"downloadables": "dist/img/palettes"
+		"downloadables": "dist/img/palettes",
+		"argsJson": "build/args.json"
 	},
 
 	"pageLength": 20,
