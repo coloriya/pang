@@ -117,7 +117,7 @@ void pang::Palette::produceSlabsPng (Resolution *resolution)
 
 	auto row = png_writer.getRow();
 
-	int slab_height = ceil(height / this->colors.size());
+	int slab_height = ceil(1.0 * height / this->colors.size());
 	this->colors[0]->colorRow(row, width);
 	for (int y = 0; y < height; y++) {
 		int slab_index = y / slab_height;
