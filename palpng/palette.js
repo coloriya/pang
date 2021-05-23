@@ -36,7 +36,7 @@ function PangPalette (app, json) {
 
 
 PangPalette.prototype.getTitle = function () {
-	return `palpng | palette | ${this.id}`;
+	return `${this.app.getTitle()} | palette | ${this.id}`;
 }
 
 PangPalette.prototype.getBaseDepth = function () {

@@ -31,7 +31,7 @@ function PangPage (app, number) {
 
 
 PangPage.prototype.getTitle = function () {
-	return (this.number == 1) ? "palpng | home" : "palpng | page | " + this.number;
+	return (this.number == 1) ? `${this.app.getTitle()} | home` : `${this.app.getTitle()} | page | ` + this.number;
 }
 
 PangPage.prototype.getBaseDepth = function () {

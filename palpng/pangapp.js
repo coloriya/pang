@@ -13,6 +13,8 @@ const PangTemplate = require("./template");
 function PangApp () {
 	this.preferences = JSON.parse(fs.readFileSync("preferences.json"));
 	this.paths = this.preferences.paths;
+	this.meta = this.preferences.meta;
+
 	this.gaText = fs.readFileSync(this.paths.analytics, 'utf8');
 	this.alphabet = "abcdefghijklmnopqrstuvwxyz";
 	this.nl = "<!-- \n -->";
@@ -70,6 +72,10 @@ PangApp.prototype.setupTemplates = function () {
 }
 
 
+
+PangApp.prototype.getTitle = function () {
+	return this.meta.title;
+}
 
 PangApp.prototype.getLastPage = function () {
 	if (this.pages.length) {
