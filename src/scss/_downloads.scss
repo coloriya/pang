@@ -2,7 +2,7 @@
 div.downloads {
 	margin: auto 40px;
 	& > div.title {
-		//
+		text-align: center;
 	}
 	& > div.content {
 		//
@@ -11,9 +11,12 @@ div.downloads {
 
 div.downloads > div.content > table {
 	border-collapse: collapse;
+	margin: auto;
+	background-color: #fff;
+	min-width: 60%;
 	tr {
 		& > td {
-			padding: 10px 10px 8px;
+			padding: 15px 15px 13px;
 			border: 1px solid #ddd;
 			border-color: #aaa #ddd;
 			&.name {

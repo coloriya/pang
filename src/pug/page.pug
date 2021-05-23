@@ -16,10 +16,11 @@ block content
 						p(class=color.getClassName())
 						b= color.getHexCode()
 	div.pagination
+		h2 #{app.getTitle()} | pages
 		each p in app.pages
 			| !{app.nl}
 			if p == page
-				a current page
+				a.current= p.number
 			else
 				a(href=p.relativeURL)= p.number
 

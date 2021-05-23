@@ -1,3 +1,23 @@
+
+mixin NextPreviousPageLinks(me)
+	| !{app.nl}
+	div.nextprev
+		div.prev
+			if me.prev
+				a(href=me.prev.getRelativeURL())
+					| !{app.nl}
+					div.title Previous
+					div.sub= me.prev.getTitle()
+		| !{app.nl}
+		div.next
+			if me.next
+				a(href=me.next.getRelativeURL())
+					| !{app.nl}
+					div.title Next
+					div.sub= me.next.getTitle()
+
+
+
 doctype html
 html(lang="en")
 	head
@@ -34,12 +54,19 @@ html(lang="en")
 	body
 		| !{app.nl}
 		header.pyp-header
-			h1 palpng
+			h1= me.getTitle()
+			div.back-to-parent
+				if me.page
+					a(href=me.page.getRelativeURL()) back to page
+				else
+					a(href=app.pages[0].getRelativeURL()) back to home
 		| !{app.nl}
 		content.pyp-content
+			+NextPreviousPageLinks(me)
 			block content
+			+NextPreviousPageLinks(me)
 		| !{app.nl}
 		footer.pyp-footer
-			h2 &copy; Ankur Seth 2021
+			h2 &copy; Ankur Seth 2021 #[a(href=app.meta.author.website) (website)]
 
 
