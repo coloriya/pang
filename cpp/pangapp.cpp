@@ -40,6 +40,11 @@ pang::App::~App ()
 	{
 		delete palette;
 	}
+
+	for (auto resolution : this->resolutions)
+	{
+		delete resolution;
+	}
 }
 
 
