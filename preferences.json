@@ -35,6 +35,10 @@
 		{
 			"name": "squares_on_white",
 			"title": "Squares on White"
+		},
+		{
+			"name": "squares_on_black",
+			"title": "Squares on Black"
 		}
 	]
 }
