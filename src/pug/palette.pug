@@ -57,17 +57,8 @@ block content
 		div.title
 			h2 Downloads
 		div.content
-			table.downloads
-				each download in downloads
-					if download.exists()
-						| !{app.nl}
-						tr(class=download.getRes())
-							td.name= download.getName()
-							td.res= download.getRes()
-							td.resx= download.getResX()
-							| !{app.nl}
-							td.size= download.getSizeKB()
-							td.url
-								a(href=download.getRelativeURL() download) Download
+			each download in downloads
+				if download.exists()
+					+PangDownload(download)
 
 

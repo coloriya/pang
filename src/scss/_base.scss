@@ -1,7 +1,6 @@
 
 html {
 	box-sizing: border-box;
-	transition: all 0.4s;
 }
 
 *, *:before, *:after {
@@ -153,7 +152,7 @@ div.pagination {
 	margin: auto;
 	& > a {
 		display: inline-block;
-		width: 30px;
+		width: 60px;
 		background-color: #fff;
 		color: #222;
 		font-weight: bold;

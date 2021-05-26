@@ -1,4 +1,17 @@
 
+mixin PangDownload(download)
+	| !{app.nl}
+	div.download(class=download.getRes())
+		div.top
+			span.res(class=download.getRes())= download.getRes()
+			span.resx= download.getResX()
+		div.middle
+			h4.name= download.getName()
+		| !{app.nl}
+		div.bottom
+			a(href=download.getRelativeURL() download) Download
+			span.size= download.getSizeKB()
+
 mixin Colorbox(color)
 	div.colorbox
 		p(class=color.getClassName())
