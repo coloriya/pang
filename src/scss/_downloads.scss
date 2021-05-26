@@ -1,4 +1,11 @@
 
+$resolution-colors: (
+	"HD": blue,
+	"FHD": #14b871,
+	"QHD": red,
+	"UHD": #b81487
+);
+
 div.downloads {
 	margin: auto 40px;
 	& > div.title {
@@ -10,18 +17,21 @@ div.downloads {
 }
 
 div.download {
-	&.HD {
-		border-color: blue;
+	@each $res, $color in $resolution-colors {
+		&.#{$res} {
+			border-color: $color;
+		}
+		&.#{$res} > div.top > span.#{$res} {
+			background-color: $color;
+		}
+		&.#{$res} > div.bottom > a {
+			color: $color;
+		}
+		&.#{$res} > div.bottom > a:hover {
+			border-bottom-color: $color;
+		}
 	}
-	&.FHD {
-		border-color: #14b871;
-	}
-	&.QHD {
-		border-color: red;
-	}
-	&.UHD {
-		border-color: #000;
-	}
+
 	text-align: left;
 	vertical-align: top;
 	display: inline-block;
@@ -34,7 +44,6 @@ div.download {
 	& > div.top {
 		padding: 10px 0px;
 		& > span.res {
-			background-color: #a32828;
 			color: #fff;
 			padding: 4px 6px;
 			font-size: 14px;
@@ -51,7 +60,7 @@ div.download {
 		transition: all 0.4s;
 	}
 	&:hover > div.middle {
-		padding-left: 25px;
+		padding-left: 5px;
 	}
 
 	& > div.bottom {

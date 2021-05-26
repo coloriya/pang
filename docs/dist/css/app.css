@@ -515,20 +515,55 @@ div.download {
 div.download.HD {
   border-color: blue;
 }
+div.download.HD > div.top > span.HD {
+  background-color: blue;
+}
+div.download.HD > div.bottom > a {
+  color: blue;
+}
+div.download.HD > div.bottom > a:hover {
+  border-bottom-color: blue;
+}
 div.download.FHD {
   border-color: #14b871;
+}
+div.download.FHD > div.top > span.FHD {
+  background-color: #14b871;
+}
+div.download.FHD > div.bottom > a {
+  color: #14b871;
+}
+div.download.FHD > div.bottom > a:hover {
+  border-bottom-color: #14b871;
 }
 div.download.QHD {
   border-color: red;
 }
+div.download.QHD > div.top > span.QHD {
+  background-color: red;
+}
+div.download.QHD > div.bottom > a {
+  color: red;
+}
+div.download.QHD > div.bottom > a:hover {
+  border-bottom-color: red;
+}
 div.download.UHD {
-  border-color: #000;
+  border-color: #b81487;
+}
+div.download.UHD > div.top > span.UHD {
+  background-color: #b81487;
+}
+div.download.UHD > div.bottom > a {
+  color: #b81487;
+}
+div.download.UHD > div.bottom > a:hover {
+  border-bottom-color: #b81487;
 }
 div.download > div.top {
   padding: 10px 0px;
 }
 div.download > div.top > span.res {
-  background-color: #a32828;
   color: #fff;
   padding: 4px 6px;
   font-size: 14px;
@@ -543,7 +578,7 @@ div.download > div.middle {
   transition: all 0.4s;
 }
 div.download:hover > div.middle {
-  padding-left: 25px;
+  padding-left: 5px;
 }
 div.download > div.bottom > a {
   display: inline-block;
