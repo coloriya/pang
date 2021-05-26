@@ -1,8 +1,23 @@
 
+html {
+	box-sizing: border-box;
+	transition: all 0.4s;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 body {
 	margin: 0;
-	font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;;
+	font-family: -apple-system, BlinkMacSystemFont,
+		"San Francisco", "Segoe UI", Roboto, Ubuntu,
+		"Helvetica Neue", Arial, sans-serif;
 	background-color: #f7f7f7;
+}
+
+b {
+	font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;
 }
 
 header.pyp-header, footer.pyp-footer {
@@ -38,6 +53,10 @@ div.nextprev {
 			text-decoration: none;
 			background-color: #fff;
 			border: 2px solid #aaa;
+			transition: all 0.4s;
+			&:hover {
+				padding: 15px 25px;
+			}
 			& > div.title {
 				font-size: 24px;
 				padding: 5px;
@@ -48,8 +67,17 @@ div.nextprev {
 			}
 		}
 	}
+	& > div.prev {
+		text-align: left;
+		& > a {
+			text-align: right;
+		}
+	}
 	& > div.next {
 		text-align: right;
+		& > a {
+			text-align: left;
+		}
 	}
 }
 
