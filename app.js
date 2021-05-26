@@ -12,25 +12,25 @@ switch (command) {
 		break;
 
 	case "css":
-		pang.saveCss();
+		pang.saveCss(arg);
 		break;
 	case "pagescss":
-		pang.savePageCss();
+		pang.savePageCss(arg);
 		break;
 	case "palscss":
 	case "palettescss":
-		pang.savePaletteCss();
+		pang.savePaletteCss(arg);
 		break;
 
 	case "html":
-		pang.saveHtml();
+		pang.saveHtml(arg);
 		break;
 	case "pageshtml":
-		pang.savePageHtml();
+		pang.savePageHtml(arg);
 		break;
 	case "palshtml":
 	case "paletteshtml":
-		pang.savePaletteHtml();
+		pang.savePaletteHtml(arg);
 		break;
 
 	default:

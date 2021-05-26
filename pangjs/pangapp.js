@@ -93,6 +93,30 @@ PangApp.prototype.getLastPalette = function () {
 
 
 
+PangApp.prototype.getPage = function (arg) {
+	if (arg) {
+		for (let page of this.pages) {
+			if (page.number == arg) {
+				return page;
+			}
+		}
+	}
+	return null;
+}
+
+PangApp.prototype.getPalette = function (arg) {
+	if (arg) {
+		for (let palette of this.palettes) {
+			if (palette.id == arg) {
+				return palette;
+			}
+		}
+	}
+	return null;
+}
+
+
+
 PangApp.prototype.getNumberOfPages = function () {
 	return this.pages.length;
 }
@@ -111,41 +135,68 @@ PangApp.prototype.getNumberOfResolutions = function () {
 
 
 
-PangApp.prototype.savePageCss = function () {
-	for (let page of this.pages) {
-		page.saveCss();
+PangApp.prototype.savePageCss = function (arg) {
+	if (!arg) {
+		for (let page of this.pages) {
+			page.saveCss();
+		}
+	} else {
+		let page = this.getPage(arg);
+		if (page) {
+			page.saveCss();
+		}
 	}
 }
 
-PangApp.prototype.savePaletteCss = function () {
-	for (let palette of this.palettes) {
-		palette.saveCss();
+PangApp.prototype.savePaletteCss = function (arg) {
+	if (!arg) {
+		for (let palette of this.palettes) {
+			palette.saveCss();
+		}
+	} else {
+		let palette = this.getPalette(arg);
+		if (palette) {
+			palette.saveCss();
+		}
 	}
 }
 
-PangApp.prototype.saveCss = function () {
-	this.savePageCss();
-	this.savePaletteCss();
+PangApp.prototype.saveCss = function (arg) {
+	this.savePageCss(arg);
+	this.savePaletteCss(arg);
 }
 
 
 
-PangApp.prototype.savePageHtml = function () {
-	for (let page of this.pages) {
-		page.saveHtml();
+PangApp.prototype.savePageHtml = function (arg) {
+	if (!arg) {
+		for (let page of this.pages) {
+			page.saveHtml();
+		}
+	} else {
+		let page = this.getPage(arg);
+		if (page) {
+			page.saveHtml();
+		}
 	}
 }
 
-PangApp.prototype.savePaletteHtml = function () {
-	for (let palette of this.palettes) {
-		palette.saveHtml();
-		// break; // while I test
+PangApp.prototype.savePaletteHtml = function (arg) {
+	if (!arg) {
+		for (let palette of this.palettes) {
+			palette.saveHtml();
+		}
+	} else {
+		let palette = this.getPalette(arg);
+		if (palette) {
+			palette.saveHtml();
+		}
 	}
 }
 
-PangApp.prototype.saveHtml = function () {
-	this.savePageHtml();
-	this.savePaletteHtml();
+PangApp.prototype.saveHtml = function (arg) {
+	this.savePageHtml(arg);
+	this.savePaletteHtml(arg);
 }
 
 
