@@ -1,5 +1,5 @@
 
-const PangApp = require("./palpng");
+const PangApp = require("./pangjs");
 const pang = new PangApp();
 
 const argv = process.argv;
