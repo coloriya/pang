@@ -1,0 +1,15 @@
+
+mixin Colorbox(color)
+	div.colorbox
+		p(class=color.getClassName())
+		b= color.getHexCode()
+
+mixin Colorshelf(palette)
+	| !{app.nl}
+	div.colorshelf
+		| !{app.nl}
+		each color in palette.colors
+			| !{app.nl}
+			+Colorbox(color)
+
+

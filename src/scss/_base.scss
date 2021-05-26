@@ -19,7 +19,7 @@ header.pyp-header {
 content.pyp-content {
 	display: block;
 	padding: 0px 10px;
-	max-width: 1280px;
+	max-width: 1200px;
 	margin: auto;
 	box-sizing: border-box;
 }
@@ -55,6 +55,29 @@ div.nextprev {
 
 
 
+div.colorshelf {
+	margin-bottom: 60px;
+	& > div.colorbox {
+		display: inline-block;
+		width: 100px;
+		background-color: #fff;
+		&:nth-child(even) {
+			background-color: #eee;
+		}
+		& > p {
+			margin: 0;
+			height: 70px;
+		}
+		& > b {
+			text-align: center;
+			display: block;
+			padding: 10px;
+		}
+	}
+}
+
+
+
 div.palette {
 	display: block;
 	margin: 40px 60px;
@@ -67,25 +90,6 @@ div.palette {
 			}
 		}
 	}
-	& > div.colors {
-		& > div {
-			display: inline-block;
-			width: 100px;
-			background-color: #fff;
-			&:nth-child(even) {
-				background-color: #eee;
-			}
-			& > p {
-				margin: 0;
-				height: 70px;
-			}
-			& > b {
-				text-align: center;
-				display: block;
-				padding: 10px;
-			}
-		}
-	}
 }
 
 
@@ -95,8 +99,10 @@ div.palette-detail {
 	text-align: center;
 	& > div.column {
 		display: inline-block;
-		width: 100px;
+		width: 90px;
 		margin-right: -1px;
+		margin-bottom: 60px;
+		background-color: #fff;
 		&.header {
 			width: 40px;
 		}

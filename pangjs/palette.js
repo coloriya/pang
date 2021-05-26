@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const PangColor = require("./color");
+const PangQuad = require("./quad");
 const PangDownload = require("./download");
 
 
@@ -24,6 +25,12 @@ function PangPalette (app, json) {
 		let colorJson = this.json.colors[index];
 		let color = new PangColor(this, colorJson, index);
 		this.colors.push(color);
+	}
+
+	this.quads = [];
+	for (let x = 0; x < this.colors.length; x += 4) {
+		let quad = new PangQuad(this);
+		this.quads.push(quad);
 	}
 
 	this.relativeURL = `palette/${this.id}`;

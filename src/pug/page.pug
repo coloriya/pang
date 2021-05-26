@@ -9,12 +9,7 @@ block content
 				h2
 					- let href = `palette/${palette.id}`;
 					a(href=href) Palette no. #{palette.id}
-			div.colors
-				each color, index in palette.colors
-					| !{app.nl}
-					div
-						p(class=color.getClassName())
-						b= color.getHexCode()
+			+Colorshelf(palette)
 	div.pagination
 		h2 #{app.getTitle()} | pages
 		each p in app.pages

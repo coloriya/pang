@@ -22,6 +22,13 @@ mixin LabelColumn
 
 
 block content
+	div.quads
+		each quad in me.quads
+			div.quad
+				div.title
+					h3 Color ##{quad.getNIndex()}
+				+Colorshelf(quad)
+
 	div.palette-detail
 		+LabelColumn()
 		each color in palette.colors
