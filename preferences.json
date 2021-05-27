@@ -15,7 +15,21 @@
 		"title": "pang",
 		"author": {
 			"name": "Ankur Seth",
-			"website": "https://ankurseth.in"
+			"website": "https://ankurseth.in",
+			"websites": [
+				{
+					"name": "GitHub",
+					"url": "https://github.com/iaseth"
+				},
+				{
+					"name": "Twitter",
+					"url": "https://twitter.com/iankurseth"
+				},
+				{
+					"name": "Website",
+					"url": "https://ankurseth.in"
+				}
+			]
 		},
 		"repos": [
 			{
