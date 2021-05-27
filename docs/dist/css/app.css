@@ -356,7 +356,7 @@ b, .mono {
 }
 
 p {
-  line-height: 1.8;
+  line-height: 2;
 }
 
 a {
@@ -451,13 +451,19 @@ footer.footer-one > div.repos > div.content > div.repo {
   width: 280px;
 }
 footer.footer-one > div.repos > div.content > div.repo > div.title {
-  color: #222;
+  color: #444;
+}
+footer.footer-one > div.repos > div.content > div.repo > div.description {
+  color: #777;
+}
+footer.footer-one > div.repos > div.content > div.repo > div.description > p {
+  font-size: 14px;
 }
 footer.footer-one > div.repos > div.content > div.repo > div.url {
-  padding: 5px 0px;
+  padding: 12px 0px;
 }
 footer.footer-one > div.repos > div.content > div.repo > div.url > a {
-  background-color: #67b9ff;
+  background-color: #a7d9ff;
   padding: 10px 12px;
   font-size: 14px;
 }
@@ -482,7 +488,7 @@ div.nextprev > div > a {
   padding: 15px 15px;
   text-decoration: none;
   background-color: #fff;
-  border: 2px solid #aaa;
+  border: 2px solid #ddd;
 }
 div.nextprev > div > a > div.title {
   font-size: 20px;

@@ -14,12 +14,18 @@ footer.footer-one {
 				margin: 20px;
 				width: 280px;
 				& > div.title {
-					color: #222;
+					color: #444;
+				}
+				& > div.description {
+					color: #777;
+					& > p {
+						font-size: 14px;
+					}
 				}
 				& > div.url {
-					padding: 5px 0px;
+					padding: 12px 0px;
 					& > a {
-						background-color: #67b9ff;
+						background-color: #a7d9ff;
 						padding: 10px 12px;
 						font-size: 14px;
 					}
