@@ -19,6 +19,12 @@ b {
 	font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;
 }
 
+a {
+	text-decoration: none;
+}
+
+
+
 header.pyp-header, footer.pyp-footer {
 	background-color: #333;
 	color: #fff;
@@ -36,48 +42,6 @@ content.pyp-content {
 	max-width: 1200px;
 	margin: auto;
 	box-sizing: border-box;
-}
-
-
-
-div.nextprev {
-	display: flex;
-	padding: 40px;
-	& > div {
-		width: 50%;
-		& > a {
-			display: inline-block;
-			min-width: 40%;
-			padding: 15px 15px;
-			text-decoration: none;
-			background-color: #fff;
-			border: 2px solid #aaa;
-			transition: all 0.4s;
-			&:hover {
-				padding: 15px 25px;
-			}
-			& > div.title {
-				font-size: 24px;
-				padding: 5px;
-			}
-			& > div.sub {
-				font-size: 14px;
-				padding: 5px;
-			}
-		}
-	}
-	& > div.prev {
-		text-align: left;
-		& > a {
-			text-align: right;
-		}
-	}
-	& > div.next {
-		text-align: right;
-		& > a {
-			text-align: left;
-		}
-	}
 }
 
 
@@ -145,26 +109,6 @@ div.palette-detail {
 	}
 }
 
-div.pagination {
-	text-align: center;
-	padding: 50px;
-	max-width: 400px;
-	margin: auto;
-	& > a {
-		display: inline-block;
-		width: 60px;
-		background-color: #fff;
-		color: #222;
-		font-weight: bold;
-		padding: 12px 15px;
-		border: 1px solid #777;
-		margin-right: -1px;
-		margin-bottom: -1px;
-		&.current {
-			background-color: transparent;
-			color: #777;
-		}
-	}
-}
+
 
 
