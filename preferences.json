@@ -16,7 +16,24 @@
 		"author": {
 			"name": "Ankur Seth",
 			"website": "https://ankurseth.in"
-		}
+		},
+		"repos": [
+			{
+				"name": "coloriya | pang",
+				"description": "Contains Pug, SCSS and JavaScript code for generating this website.",
+				"url": "https://github.com/coloriya/pang"
+			},
+			{
+				"name": "coloriya | pang-cpp",
+				"description": "Contains C++ code for generating PNGs for each palette.",
+				"url": "https://github.com/coloriya/pang-cpp"
+			},
+			{
+				"name": "coloriya | pypalettes",
+				"description": "Contains Python code for generating color palettes to be used in other projects.",
+				"url": "https://github.com/coloriya/pypalettes"
+			}
+		]
 	},
 
 	"downloadables": [

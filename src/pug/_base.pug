@@ -69,7 +69,27 @@ html(lang="en")
 			block content
 			+NextPreviousPageLinks(me)
 		| !{app.nl}
-		footer.pyp-footer
+
+		footer.footer-one
+			div.repos
+				div.title
+					h3 Repos related to pang:
+				div.content
+					each repo in me.app.meta.repos
+						| !{app.nl}
+						div.repo
+							div.title
+								h3= repo.name
+							| !{app.nlx}
+							div.description
+								p= repo.description
+							| !{app.nlx}
+							div.url
+								a(href=repo.url) open on GitHub
+							| !{app.nlx}
+
+		| !{app.nl}
+		footer.footer-two
 			h2 &copy; Ankur Seth 2021 #[a(href=app.meta.author.website) (website)]
 
 
