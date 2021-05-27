@@ -394,7 +394,7 @@ div.colorshelf > div.colorbox > b {
 
 div.palette {
   display: block;
-  margin: 40px 60px;
+  margin: 40px 30px;
   margin-bottom: 100px;
 }
 div.palette > div.title > h2 > a {
@@ -472,7 +472,40 @@ footer.footer-two {
   background-color: #333;
   color: #fff;
   padding: 50px;
-  text-align: center;
+}
+
+footer.footer-two > div.author {
+  padding: 40px 40px;
+}
+
+footer.footer-two > div.websites > div.website {
+  border: 2px solid #aaa;
+  max-width: 400px;
+  padding: 0px 20px;
+  margin: 20px;
+  margin-bottom: 70px;
+  position: relative;
+}
+footer.footer-two > div.websites > div.website > div.title, footer.footer-two > div.websites > div.website > a {
+  position: absolute;
+  font-size: 14px;
+  display: inline-block;
+  background-color: #333;
+  padding: 8px 12px;
+  color: #fff;
+}
+footer.footer-two > div.websites > div.website > div.title {
+  top: -20px;
+  border: 2px solid #aaa;
+}
+footer.footer-two > div.websites > div.website > div.url {
+  padding: 40px 0px;
+}
+footer.footer-two > div.websites > div.website > a {
+  bottom: -20px;
+  right: 30px;
+  background-color: #444;
+  border: 2px solid #444;
 }
 
 div.nextprev {
@@ -524,8 +557,9 @@ div.nextprev > div.next > a {
 
 div.pagination {
   text-align: left;
-  padding: 50px;
-  max-width: 400px;
+  padding: 25px 10px;
+  max-width: 320px;
+  margin: auto;
   margin: auto;
 }
 div.pagination > h2 {
@@ -538,7 +572,7 @@ div.pagination > a {
   background-color: #fff;
   color: #222;
   font-weight: bold;
-  padding: 12px 15px;
+  padding: 15px 15px;
   border: 1px solid #777;
   margin-right: -1px;
   margin-bottom: -1px;
