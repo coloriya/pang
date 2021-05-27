@@ -352,7 +352,7 @@ body {
 }
 
 b, .mono {
-  font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;
+  font-family: Ubuntu Mono, SFMono-Regular, Consolas, Menlo, Monaco, Liberation Mono, monospace;
 }
 
 p {
