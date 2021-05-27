@@ -489,18 +489,25 @@ div.nextprev > div > a {
   text-decoration: none;
   background-color: #fff;
   border: 2px solid #ddd;
-}
-div.nextprev > div > a > div.title {
-  font-size: 20px;
-  padding: 5px 10px;
   transition: all 0.4s;
 }
-div.nextprev > div > a:hover > div.title {
-  padding: 5px 20px;
+div.nextprev > div > a > div.title, div.nextprev > div > a > div.sub {
+  font-size: 12px;
+  color: #777;
+  font-weight: bold;
 }
-div.nextprev > div > a > div.sub {
-  font-size: 14px;
-  padding: 5px;
+div.nextprev > div > a > div.name {
+  font-size: 18px;
+  color: #222;
+  padding: 20px 0px;
+  transition: all 0.4s;
+}
+div.nextprev > div > a:hover, div.nextprev > div > a:focus {
+  border-color: #666;
+}
+div.nextprev > div > a:hover > div.name, div.nextprev > div > a:focus > div.name {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 div.nextprev > div.prev {
   text-align: left;
