@@ -82,7 +82,7 @@ html(lang="en")
 						div.title= website.name
 						| !{app.nlx}
 						div.url
-							b= website.url
+							b= website.url.split("//")[1]
 						| !{app.nlx}
 						a(href=website.url target="_blank") open
 
