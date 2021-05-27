@@ -50,8 +50,9 @@ div.nextprev {
 
 div.pagination {
 	text-align: left;
-	padding: 50px;
-	max-width: 400px;
+	padding: 25px 10px;
+	max-width: 320px;
+	margin: auto;
 	margin: auto;
 	& > h2 {
 		text-align: center;
@@ -63,7 +64,7 @@ div.pagination {
 		background-color: #fff;
 		color: #222;
 		font-weight: bold;
-		padding: 12px 15px;
+		padding: 15px 15px;
 		border: 1px solid #777;
 		margin-right: -1px;
 		margin-bottom: -1px;

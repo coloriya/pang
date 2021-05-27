@@ -73,6 +73,17 @@ html(lang="en")
 
 		| !{app.nl}
 		footer.footer-two
-			h2 &copy; Ankur Seth 2021 #[a(href=app.meta.author.website) (website)]
+			div.author
+				h3 &copy; Ankur Seth 2021
+			div.websites
+				each website in app.meta.author.websites
+					| !{app.nlx}
+					div.website
+						div.title= website.name
+						| !{app.nlx}
+						div.url
+							b= website.url
+						| !{app.nlx}
+						a(href=website.url target="_blank") open
 
 
