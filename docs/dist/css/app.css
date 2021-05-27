@@ -471,7 +471,7 @@ footer.footer-one > div.repos > div.content > div.repo > div.url > a {
 footer.footer-two {
   background-color: #333;
   color: #fff;
-  padding: 50px;
+  padding: 50px 20px;
 }
 
 footer.footer-two > div.author {
