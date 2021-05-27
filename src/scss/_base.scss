@@ -15,8 +15,12 @@ body {
 	background-color: #f7f7f7;
 }
 
-b {
+b, .mono {
 	font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;
+}
+
+p {
+	line-height: 1.8;
 }
 
 a {
@@ -24,17 +28,6 @@ a {
 }
 
 
-
-header.pyp-header, footer.pyp-footer {
-	background-color: #333;
-	color: #fff;
-	padding: 50px;
-	text-align: center;
-}
-
-header.pyp-header {
-	padding-top: 60px;
-}
 
 content.pyp-content {
 	display: block;

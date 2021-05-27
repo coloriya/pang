@@ -1,0 +1,37 @@
+
+footer.footer-one {
+	background-color: #fff;
+	& > div.repos {
+		padding: 40px 20px;
+		text-align: center;
+		& > div.content {
+			& > div.repo {
+				display: inline-block;
+				vertical-align: top;
+				text-align: left;
+				padding: 20px;
+				border: 2px solid #4799eb;
+				margin: 20px;
+				width: 280px;
+				& > div.title {
+					color: #222;
+				}
+				& > div.url {
+					padding: 5px 0px;
+					& > a {
+						background-color: #67b9ff;
+						padding: 10px 12px;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+footer.footer-two {
+	background-color: #333;
+	color: #fff;
+	padding: 50px;
+	text-align: center;
+}
