@@ -351,19 +351,16 @@ body {
   background-color: #f7f7f7;
 }
 
-b {
+b, .mono {
   font-family: "Ubuntu Mono", Monaco, "Lucida Console", "Courier New", monospace;
 }
 
-header.pyp-header, footer.pyp-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 50px;
-  text-align: center;
+p {
+  line-height: 1.8;
 }
 
-header.pyp-header {
-  padding-top: 60px;
+a {
+  text-decoration: none;
 }
 
 content.pyp-content {
@@ -372,46 +369,6 @@ content.pyp-content {
   max-width: 1200px;
   margin: auto;
   box-sizing: border-box;
-}
-
-div.nextprev {
-  display: flex;
-  padding: 40px;
-}
-div.nextprev > div {
-  width: 50%;
-}
-div.nextprev > div > a {
-  display: inline-block;
-  min-width: 40%;
-  padding: 15px 15px;
-  text-decoration: none;
-  background-color: #fff;
-  border: 2px solid #aaa;
-  transition: all 0.4s;
-}
-div.nextprev > div > a:hover {
-  padding: 15px 25px;
-}
-div.nextprev > div > a > div.title {
-  font-size: 24px;
-  padding: 5px;
-}
-div.nextprev > div > a > div.sub {
-  font-size: 14px;
-  padding: 5px;
-}
-div.nextprev > div.prev {
-  text-align: left;
-}
-div.nextprev > div.prev > a {
-  text-align: right;
-}
-div.nextprev > div.next {
-  text-align: right;
-}
-div.nextprev > div.next > a {
-  text-align: left;
 }
 
 div.colorshelf {
@@ -469,13 +426,100 @@ div.palette-detail > div.column > b.c {
   height: 60px;
 }
 
-div.pagination {
+header.pyp-header {
+  background-color: #333;
+  color: #fff;
+  padding: 50px;
   text-align: center;
+  padding-top: 60px;
+}
+
+footer.footer-one {
+  background-color: #fff;
+}
+footer.footer-one > div.repos {
+  padding: 40px 20px;
+  text-align: center;
+}
+footer.footer-one > div.repos > div.content > div.repo {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 20px;
+  border: 2px solid #4799eb;
+  margin: 20px;
+  width: 280px;
+}
+footer.footer-one > div.repos > div.content > div.repo > div.title {
+  color: #222;
+}
+footer.footer-one > div.repos > div.content > div.repo > div.url {
+  padding: 5px 0px;
+}
+footer.footer-one > div.repos > div.content > div.repo > div.url > a {
+  background-color: #67b9ff;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+footer.footer-two {
+  background-color: #333;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+div.nextprev {
+  display: flex;
+  padding: 40px;
+}
+div.nextprev > div {
+  width: 50%;
+}
+div.nextprev > div > a {
+  display: inline-block;
+  min-width: 40%;
+  padding: 15px 15px;
+  text-decoration: none;
+  background-color: #fff;
+  border: 2px solid #aaa;
+}
+div.nextprev > div > a > div.title {
+  font-size: 20px;
+  padding: 5px 10px;
+  transition: all 0.4s;
+}
+div.nextprev > div > a:hover > div.title {
+  padding: 5px 20px;
+}
+div.nextprev > div > a > div.sub {
+  font-size: 14px;
+  padding: 5px;
+}
+div.nextprev > div.prev {
+  text-align: left;
+}
+div.nextprev > div.prev > a {
+  text-align: right;
+}
+div.nextprev > div.next {
+  text-align: right;
+}
+div.nextprev > div.next > a {
+  text-align: left;
+}
+
+div.pagination {
+  text-align: left;
   padding: 50px;
   max-width: 400px;
   margin: auto;
 }
+div.pagination > h2 {
+  text-align: center;
+}
 div.pagination > a {
+  text-align: center;
   display: inline-block;
   width: 60px;
   background-color: #fff;
