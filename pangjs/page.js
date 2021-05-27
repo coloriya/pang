@@ -34,6 +34,10 @@ PangPage.prototype.getTitle = function () {
 	return (this.number == 1) ? `${this.app.getTitle()} | home` : `${this.app.getTitle()} | page | ` + this.number;
 }
 
+PangPage.prototype.getSubTitle = function () {
+	return `${this.palettes.length} palettes`;
+}
+
 PangPage.prototype.getBaseDepth = function () {
 	if (this.number == 1) {
 		return 0;
