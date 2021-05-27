@@ -475,9 +475,15 @@ footer.footer-two {
 }
 
 footer.footer-two > div.author {
+  max-width: 1200px;
+  margin: auto;
   padding: 40px 40px;
 }
 
+footer.footer-two > div.websites {
+  max-width: 1200px;
+  margin: auto;
+}
 footer.footer-two > div.websites > div.website {
   border: 2px solid #aaa;
   max-width: 400px;
@@ -510,14 +516,14 @@ footer.footer-two > div.websites > div.website > a {
 
 div.nextprev {
   display: flex;
-  padding: 40px;
+  padding: 40px 0px;
 }
 div.nextprev > div {
   width: 50%;
 }
 div.nextprev > div > a {
   display: inline-block;
-  min-width: 40%;
+  min-width: 45%;
   padding: 15px 15px;
   text-decoration: none;
   background-color: #fff;
@@ -549,6 +555,7 @@ div.nextprev > div.prev > a {
   text-align: right;
 }
 div.nextprev > div.next {
+  margin-left: -2px;
   text-align: right;
 }
 div.nextprev > div.next > a {

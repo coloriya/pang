@@ -46,10 +46,14 @@ footer.footer-two {
 }
 
 footer.footer-two > div.author {
+	max-width: 1200px;
+	margin: auto;
 	padding: 40px 40px;
 }
 
 footer.footer-two > div.websites {
+	max-width: 1200px;
+	margin: auto;
 	& > div.website {
 		border: 2px solid $footer-two-bdc;
 		max-width: 400px;

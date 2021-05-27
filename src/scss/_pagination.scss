@@ -1,12 +1,12 @@
 
 div.nextprev {
 	display: flex;
-	padding: 40px;
+	padding: 40px 0px;
 	& > div {
 		width: 50%;
 		& > a {
 			display: inline-block;
-			min-width: 40%;
+			min-width: 45%;
 			padding: 15px 15px;
 			text-decoration: none;
 			background-color: #fff;
@@ -39,6 +39,7 @@ div.nextprev {
 		}
 	}
 	& > div.next {
+		margin-left: -2px;
 		text-align: right;
 		& > a {
 			text-align: left;
