@@ -26,3 +26,24 @@ mixin Colorshelf(palette)
 			+Colorbox(color)
 
 
+
+mixin NextPreviousPageLinks(me)
+	| !{app.nl}
+	div.nextprev
+		div.prev
+			if me.prev
+				a(href=me.prev.getRelativeURL())
+					| !{app.nl}
+					div.title= me.prev.getTitle()
+					div.name Previous
+					div.sub= me.prev.getSubTitle()
+		| !{app.nl}
+		div.next
+			if me.next
+				a(href=me.next.getRelativeURL())
+					| !{app.nl}
+					div.title= me.next.getTitle()
+					div.name Next
+					div.sub= me.next.getSubTitle()
+
+

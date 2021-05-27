@@ -3,23 +3,6 @@ doctype html
 
 include _mixins
 
-mixin NextPreviousPageLinks(me)
-	| !{app.nl}
-	div.nextprev
-		div.prev
-			if me.prev
-				a(href=me.prev.getRelativeURL())
-					| !{app.nl}
-					div.title Previous
-					div.sub= me.prev.getTitle()
-		| !{app.nl}
-		div.next
-			if me.next
-				a(href=me.next.getRelativeURL())
-					| !{app.nl}
-					div.title Next
-					div.sub= me.next.getTitle()
-
 
 
 html(lang="en")
