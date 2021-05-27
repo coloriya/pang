@@ -95,6 +95,7 @@ PangPalette.prototype.saveHtml = function () {
 	fs.writeFileSync(this.htmlPath, template({
 		me: this,
 		palette: this,
+		page: this.page,
 		app: this.app,
 		downloads: this.getDownloads()
 	}));
