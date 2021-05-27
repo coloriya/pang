@@ -18,6 +18,7 @@ function PangApp () {
 	this.gaText = fs.readFileSync(this.paths.analytics, 'utf8');
 	this.alphabet = "abcdefghijklmnopqrstuvwxyz";
 	this.nl = "<!-- \n -->";
+	this.nlx = "\n";
 
 	this.setupPalettes();
 	this.setupPages();
