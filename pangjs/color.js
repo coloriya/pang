@@ -13,12 +13,16 @@ PangColor.prototype.getHexCode = function () {
 	return this.json.hex;
 }
 
+PangColor.prototype.getNIndex = function () {
+	return this.index + 1;
+}
+
 PangColor.prototype.getClassName = function () {
-	return `pyp${this.palette.id}${this.app.alphabet[this.index]}`;
+	return `pyp${this.palette.id}c${this.getNIndex()}`;
 }
 
 PangColor.prototype.getCssText = function () {
-	return `.pyp${this.palette.id}${this.app.alphabet[this.index]} {background: ${this.json.hex};}\n`;
+	return `.${this.getClassName()} {background: ${this.json.hex};}\n`;
 }
 
 
