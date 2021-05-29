@@ -57,6 +57,23 @@ html(lang="en")
 			+NextPreviousPageLinks(me)
 		| !{app.nl}
 
+		footer.footer-zero
+			div.inner
+				div.types
+					div.title
+						h3 Browse by type
+					div.content
+						for palette_type in app.palette_types
+							a.type(href=palette_type.getHref())= palette_type.title
+							| !{app.nl}
+				div.hues
+					div.title
+						h3 Browse by hue
+					div.content
+						for hue in app.hues
+							a.hue(href=hue.getHref()) Hue #{hue.hue_start}&deg;
+							| !{app.nl}
+
 		footer.footer-one
 			div.repos
 				div.title
