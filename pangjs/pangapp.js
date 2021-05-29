@@ -88,7 +88,12 @@ PangApp.prototype.setupResolutions = function () {
 
 PangApp.prototype.setupTemplates = function () {
 	this.templates = {
+		home: new PangTemplate(this, "home"),
 		page: new PangTemplate(this, "page"),
+		hue: new PangTemplate(this, "hue"),
+
+		type: new PangTemplate(this, "type"),
+		typepage: new PangTemplate(this, "typepage"),
 		palette: new PangTemplate(this, "palette")
 	};
 }
