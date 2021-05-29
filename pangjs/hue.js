@@ -33,6 +33,10 @@ PangHue.prototype = new PangBaseClass;
 
 
 
+PangHue.prototype.getHref = function () {
+	return `hue/${this.hue_start}`;
+}
+
 PangHue.prototype.contains = function (arg) {
 	arg = Number(arg);
 	if (arg >= this.hue_start && arg <= this.hue_end) {

@@ -15,6 +15,9 @@ block content
 					span.in in
 					a(href=palette.type.getHref())= palette.type.title
 			+Colorshelf(palette)
+			div.hues
+				each hue in palette.hues
+					a.hue(href=hue.getHref()) Hue #{hue.hue_start}&deg;
 	div.pagination
 		h2 #{app.getTitle()} | pages
 		each p in app.pages

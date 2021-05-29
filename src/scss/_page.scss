@@ -2,7 +2,7 @@
 div.palette {
 	display: block;
 	margin: 40px 10px;
-	margin-bottom: 100px;
+	margin-bottom: 150px;
 	& > div.title {
 		& > h2 {
 			& > a {
@@ -14,7 +14,7 @@ div.palette {
 }
 
 div.colorshelf {
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	@include mobile {
 		font-size: 0;
 	}
@@ -63,6 +63,21 @@ div.type {
 			&:hover, &:focus {
 				border-color: blue;
 			}
+		}
+	}
+}
+
+div.hues {
+	& > a.hue {
+		display: inline-block;
+		background-color: #fff;
+		padding: 8px 10px;
+		border: 2px solid #ccc;
+		margin: 5px 10px;
+		font-weight: bold;
+		transition: all 0.4s;
+		&:hover, &:focus {
+			border-color: blue;
 		}
 	}
 }
