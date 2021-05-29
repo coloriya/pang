@@ -22,7 +22,7 @@ PangDownload.prototype.getFileName = function () {
 }
 
 PangDownload.prototype.getRelativeURL = function () {
-	return path.join("dist/img/palettes", this.resolution.getName(), this.downloadable.getName(), this.getFileName());
+	return path.join("dist/img/palettes", this.downloadable.getName(), this.resolution.getName(), this.getFileName());
 }
 
 PangDownload.prototype.getPath = function () {
