@@ -5,7 +5,10 @@ div.nextprev {
 	& > div {
 		width: 50%;
 		& > a {
+			position: relative;
+			z-index: 10;
 			display: inline-block;
+			overflow: hidden;
 			min-width: 45%;
 			@include mobile {
 				display: block;
@@ -26,8 +29,23 @@ div.nextprev {
 				padding: 20px 0px;
 				transition: all 0.4s;
 			}
+			&::after {
+				display: block;
+				position: absolute;
+				z-index: -1;
+				height: 100%;
+				width: 100%;
+				background-color: #eee;
+				top: 100%;
+				left: 0px;
+				content: "";
+				transition: 0.4s;
+			}
 			&:hover, &:focus {
 				border-color: #666;
+				&::after {
+					top: 0%;
+				}
 				& > div.name {
 					padding-left: 10px;
 					padding-right: 10px;
