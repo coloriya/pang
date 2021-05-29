@@ -29,28 +29,29 @@ block content
 					h3 Color ##{group.getNIndex()}
 				+Colorshelf(group)
 
-	div.palette-detail
-		+LabelColumn()
-		each color in palette.colors
-			| !{app.nl}
-			- let classname = color.getClassName();
-			div.column
+	each group in me.groups
+		div.palette-detail
+			+LabelColumn()
+			each color in group.colors
 				| !{app.nl}
-				b.x= color.getHexCode()
-				b.c(class=classname)
-				b.r= color.json.rgb[0]
-				b.g= color.json.rgb[1]
-				b.b= color.json.rgb[2]
-				| !{app.nl}
-				b.c(class=classname)
-				b.h= color.json.hsl[0]
-				b.s= color.json.hsl[1]
-				b.l= color.json.hsl[2]
-				| !{app.nl}
-				b.c(class=classname)
+				- let classname = color.getClassName();
+				div.column
+					| !{app.nl}
+					b.x= color.getHexCode()
+					b.c(class=classname)
+					b.r= color.json.rgb[0]
+					b.g= color.json.rgb[1]
+					b.b= color.json.rgb[2]
+					| !{app.nl}
+					b.c(class=classname)
+					b.h= color.json.hsl[0]
+					b.s= color.json.hsl[1]
+					b.l= color.json.hsl[2]
+					| !{app.nl}
+					b.c(class=classname)
 
-			| !{app.nl}
-		+LabelColumn()
+				| !{app.nl}
+			+LabelColumn()
 
 
 	div.downloads
