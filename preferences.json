@@ -50,6 +50,37 @@
 		]
 	},
 
+	"palette_types": [
+		{
+			"title": "Monochromatic",
+			"name": "monochromatic"
+		},
+		{
+			"title": "Rectangular",
+			"name": "rectangular"
+		},
+		{
+			"title": "Complementary",
+			"name": "complementary"
+		},
+		{
+			"title": "Split-complementary",
+			"name": "split-complementary"
+		},
+		{
+			"title": "Analogous",
+			"name": "analogous"
+		},
+		{
+			"title": "Analogous-triad",
+			"name": "analogous-triad"
+		},
+		{
+			"title": "Analogous-quad",
+			"name": "analogous-quad"
+		}
+	],
+
 	"downloadables": [
 		{
 			"name": "bars",
