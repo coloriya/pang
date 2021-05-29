@@ -92,6 +92,13 @@ PangPalette.prototype.saveCss = function () {
 
 PangPalette.prototype.saveHtml = function () {
 	let template = this.app.templates.palette.getPug();
+
+	let dirpath = path.dirname(this.htmlPath);
+	if (!fs.existsSync(dirpath)) {
+		fs.mkdirSync(dirpath);
+		console.log(`\tCreated directory: ${dirpath}`);
+	}
+
 	fs.writeFileSync(this.htmlPath, template({
 		me: this,
 		palette: this,

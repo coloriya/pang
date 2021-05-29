@@ -67,6 +67,13 @@ PangPage.prototype.saveCss = function () {
 
 PangPage.prototype.saveHtml = function () {
 	let template = this.app.templates.page.getPug();
+
+	let dirpath = path.dirname(this.htmlPath);
+	if (!fs.existsSync(dirpath)) {
+		fs.mkdirSync(dirpath);
+		console.log(`\tCreated directory: ${dirpath}`);
+	}
+
 	fs.writeFileSync(this.htmlPath, template({
 		me: this,
 		page: this,
