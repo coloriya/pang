@@ -44,6 +44,9 @@ function PangPalette (app, json) {
 	this.cssPath = path.join(this.app.paths.output, this.cssURL);
 }
 
+const PangBaseClass = require("./baseclass");
+PangPalette.prototype = new PangBaseClass;
+
 
 
 PangPalette.prototype.getTitle = function () {

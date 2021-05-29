@@ -17,6 +17,9 @@ function PangHuePage (hue, number) {
 	}
 }
 
+const PangBaseClass = require("./baseclass");
+PangHuePage.prototype = new PangBaseClass;
+
 
 
 module.exports = PangHuePage;

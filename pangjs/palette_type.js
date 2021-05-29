@@ -34,20 +34,13 @@ function PangPaletteType (app, json) {
 	}
 }
 
+const PangBaseClass = require("./baseclass");
+PangPaletteType.prototype = new PangBaseClass;
+
+
+
 PangPaletteType.prototype.getHref = function () {
 	return this.name;
-}
-
-PangPaletteType.prototype.getNumberOfPalettes = function () {
-	return this.palettes.length;
-}
-
-PangPaletteType.prototype.getNumberOfPages = function () {
-	return this.pages.length;
-}
-
-PangPaletteType.prototype.getLastPage = function () {
-	return this.palettes[this.palettes.length - 1];
 }
 
 PangPaletteType.prototype.consoleLog = function () {

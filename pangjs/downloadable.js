@@ -11,6 +11,9 @@ function PangDownloadable (app, json) {
 	this.title = this.json.title;
 }
 
+const PangBaseClass = require("./baseclass");
+PangDownloadable.prototype = new PangBaseClass;
+
 
 
 PangDownloadable.prototype.getName = function () {

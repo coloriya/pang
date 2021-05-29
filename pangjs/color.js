@@ -8,6 +8,9 @@ function PangColor (palette, json, index) {
 	this.app = this.palette.app;
 }
 
+const PangBaseClass = require("./baseclass");
+PangColor.prototype = new PangBaseClass;
+
 
 PangColor.prototype.getHexCode = function () {
 	return this.json.hex;

@@ -11,6 +11,9 @@ function PangDownload (palette, downloadable, resolution) {
 	this.resolution = resolution;
 }
 
+const PangBaseClass = require("./baseclass");
+PangDownload.prototype = new PangBaseClass;
+
 
 
 PangDownload.prototype.getFileName = function () {

@@ -28,24 +28,17 @@ function PangHue (app, hue) {
 	}
 }
 
+const PangBaseClass = require("./baseclass");
+PangHue.prototype = new PangBaseClass;
+
+
+
 PangHue.prototype.contains = function (arg) {
 	arg = Number(arg);
 	if (arg >= this.hue_start && arg <= this.hue_end) {
 		return true;
 	}
 	return false;
-}
-
-PangHue.prototype.getNumberOfPalettes = function () {
-	return this.palettes.length;
-}
-
-PangHue.prototype.getNumberOfPages = function () {
-	return this.pages.length;
-}
-
-PangHue.prototype.getLastPage = function () {
-	return this.palettes[this.palettes.length - 1];
 }
 
 PangHue.prototype.consoleLog = function () {

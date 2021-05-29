@@ -17,6 +17,9 @@ function PangPaletteTypePage (type, number) {
 	}
 }
 
+const PangBaseClass = require("./baseclass");
+PangPaletteTypePage.prototype = new PangBaseClass;
+
 
 
 module.exports = PangPaletteTypePage;

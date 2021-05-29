@@ -32,6 +32,9 @@ function PangApp () {
 	this.setupTemplates();
 }
 
+const PangBaseClass = require("./baseclass");
+PangApp.prototype = new PangBaseClass;
+
 PangApp.prototype.setupPalettes = function () {
 	this.paletteJson = JSON.parse(fs.readFileSync(this.paths.palettes));
 

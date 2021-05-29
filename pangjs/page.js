@@ -28,6 +28,9 @@ function PangPage (app, number) {
 	this.cssPath = path.join(this.app.paths.output, this.cssURL);
 }
 
+const PangBaseClass = require("./baseclass");
+PangPage.prototype = new PangBaseClass;
+
 
 
 PangPage.prototype.getTitle = function () {
