@@ -34,21 +34,21 @@ block content
 			+LabelColumn()
 			each color in group.colors
 				| !{app.nl}
-				- let classname = color.getClassName();
+				- let style = color.getBgStyle();
 				div.column
 					| !{app.nl}
 					b.x= color.getHexCode()
-					b.c(class=classname)
+					b.c(style=style)
 					b.r= color.json.rgb[0]
 					b.g= color.json.rgb[1]
 					b.b= color.json.rgb[2]
 					| !{app.nl}
-					b.c(class=classname)
+					b.c(style=style)
 					b.h= color.json.hsl[0]
 					b.s= color.json.hsl[1]
 					b.l= color.json.hsl[2]
 					| !{app.nl}
-					b.c(class=classname)
+					b.c(style=style)
 
 				| !{app.nl}
 			+LabelColumn()
