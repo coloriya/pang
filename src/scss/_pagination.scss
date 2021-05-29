@@ -7,6 +7,9 @@ div.nextprev {
 		& > a {
 			display: inline-block;
 			min-width: 45%;
+			@include mobile {
+				display: block;
+			}
 			padding: 15px 15px;
 			text-decoration: none;
 			background-color: #fff;

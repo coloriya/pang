@@ -59,6 +59,10 @@ div.type {
 			display: inline-block;
 			border: 2px solid #ccc;
 			margin-left: 5px;
+			transition: all 0.4s;
+			&:hover, &:focus {
+				border-color: blue;
+			}
 		}
 	}
 }

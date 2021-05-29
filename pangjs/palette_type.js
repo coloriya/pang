@@ -7,6 +7,7 @@ function PangPaletteType (app, json) {
 	this.name = this.json.name;
 	this.title = this.json.title;
 
+	this.index = this.app.palette_types.length;
 	this.next = null;
 	this.prev = this.app.getLastPaletteType();
 	if (this.prev) {
@@ -33,6 +34,16 @@ PangPaletteType.prototype.getNumberOfPalettes = function () {
 
 PangPaletteType.prototype.consoleLog = function () {
 	console.log(`Type '${this.name}' has ${this.getNumberOfPalettes()} palettes.`);
+}
+
+
+
+PangPaletteType.prototype.saveCss = function () {
+	//
+}
+
+PangPaletteType.prototype.saveHtml = function () {
+	//
 }
 
 

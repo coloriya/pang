@@ -149,6 +149,17 @@ PangApp.prototype.getPalette = function (arg) {
 	return null;
 }
 
+PangApp.prototype.getPaletteType = function (arg) {
+	if (arg) {
+		for (let palette_type of this.palette_types) {
+			if (palette_type.index == arg) {
+				return palette_type;
+			}
+		}
+	}
+	return null;
+}
+
 
 
 PangApp.prototype.getNumberOfPages = function () {
@@ -195,9 +206,23 @@ PangApp.prototype.savePaletteCss = function (arg) {
 	}
 }
 
+PangApp.prototype.savePaletteTypeCss = function (arg) {
+	if (!arg) {
+		for (let palette_type of this.palette_types) {
+			palette_type.saveCss();
+		}
+	} else {
+		let palette_type = this.getPaletteType(arg);
+		if (palette_type) {
+			palette_type.saveCss();
+		}
+	}
+}
+
 PangApp.prototype.saveCss = function (arg) {
 	this.savePageCss(arg);
 	this.savePaletteCss(arg);
+	this.savePaletteTypeCss(arg);
 }
 
 
@@ -228,9 +253,23 @@ PangApp.prototype.savePaletteHtml = function (arg) {
 	}
 }
 
+PangApp.prototype.savePaletteTypeHtml = function (arg) {
+	if (!arg) {
+		for (let palette_type of this.palette_types) {
+			palette_type.saveHtml();
+		}
+	} else {
+		let palette_type = this.getPaletteType(arg);
+		if (palette_type) {
+			palette_type.saveHtml();
+		}
+	}
+}
+
 PangApp.prototype.saveHtml = function (arg) {
 	this.savePageHtml(arg);
 	this.savePaletteHtml(arg);
+	this.savePaletteTypeHtml(arg);
 }
 
 
