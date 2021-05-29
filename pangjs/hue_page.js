@@ -19,7 +19,7 @@ function PangHuePage (hue, number) {
 		this.prev.next = this;
 	}
 
-	this.relativeURL = (this.number == 1) ? `hue/${this.hue.hue_start}` : `hue/${this.hue.hue_start}/${this.number}`;
+	this.relativeURL = (this.number == 1) ? this.hue.getHref() : `${this.hue.getHref()}/${this.number}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 
 	this.cssURL = `dist/css/hues/hue_${this.number}.css`;

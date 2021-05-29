@@ -96,7 +96,6 @@ PangApp.prototype.setupTemplates = function () {
 		hue: new PangTemplate(this, "hue"),
 
 		type: new PangTemplate(this, "type"),
-		typepage: new PangTemplate(this, "typepage"),
 		palette: new PangTemplate(this, "palette")
 	};
 }

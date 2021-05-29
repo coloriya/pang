@@ -1,6 +1,14 @@
 extends _base
 
 block content
-
+	+PaletteList(type_page.palettes)
+	div.pagination
+		h3 #{type.title} palettes
+		each p in type.pages
+			| !{app.nl}
+			if p == page
+				a.current= p.number
+			else
+				a(href=p.relativeURL)= p.number
 
 

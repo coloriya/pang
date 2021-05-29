@@ -56,7 +56,9 @@ PangPaletteType.prototype.saveCss = function () {
 }
 
 PangPaletteType.prototype.saveHtml = function () {
-	//
+	for (let page of this.pages) {
+		page.saveHtml();
+	}
 }
 
 
