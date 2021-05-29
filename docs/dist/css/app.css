@@ -371,37 +371,6 @@ content.pyp-content {
   box-sizing: border-box;
 }
 
-div.colorshelf {
-  margin-bottom: 60px;
-}
-div.colorshelf > div.colorbox {
-  display: inline-block;
-  width: 100px;
-  background-color: #fff;
-}
-div.colorshelf > div.colorbox:nth-child(even) {
-  background-color: #eee;
-}
-div.colorshelf > div.colorbox > p {
-  margin: 0;
-  height: 70px;
-}
-div.colorshelf > div.colorbox > b {
-  text-align: center;
-  display: block;
-  padding: 10px;
-}
-
-div.palette {
-  display: block;
-  margin: 40px 30px;
-  margin-bottom: 100px;
-}
-div.palette > div.title > h2 > a {
-  text-decoration: none;
-  color: #000;
-}
-
 div.palette-detail {
   margin: 60px auto;
   text-align: center;
@@ -413,6 +382,11 @@ div.palette-detail > div.column {
   margin-bottom: 60px;
   background-color: #fff;
 }
+@media (max-device-width: 720px) {
+  div.palette-detail > div.column {
+    width: 55px;
+  }
+}
 div.palette-detail > div.column.header {
   width: 40px;
 }
@@ -422,8 +396,18 @@ div.palette-detail > div.column > b {
   border: 1px solid #000;
   margin-bottom: -1px;
 }
+@media (max-device-width: 720px) {
+  div.palette-detail > div.column > b.x {
+    display: none;
+  }
+}
 div.palette-detail > div.column > b.c {
   height: 60px;
+}
+@media (max-device-width: 720px) {
+  div.palette-detail > div.column > b.c {
+    height: 50px;
+  }
 }
 
 header.pyp-header {
@@ -466,6 +450,12 @@ footer.footer-one > div.repos > div.content > div.repo > div.url > a {
   background-color: #a7d9ff;
   padding: 10px 12px;
   font-size: 14px;
+  border: 2px solid #a7d9ff;
+  transition: 0.4s;
+}
+footer.footer-one > div.repos > div.content > div.repo > div.url > a:hover, footer.footer-one > div.repos > div.content > div.repo > div.url > a:focus {
+  background-color: #4799eb;
+  color: white;
 }
 
 footer.footer-two {
@@ -495,7 +485,7 @@ footer.footer-two > div.websites > div.website {
 footer.footer-two > div.websites > div.website > div.title, footer.footer-two > div.websites > div.website > a {
   position: absolute;
   font-size: 14px;
-  display: inline-block;
+  display: block;
   background-color: #333;
   padding: 8px 12px;
   color: #fff;
@@ -505,13 +495,22 @@ footer.footer-two > div.websites > div.website > div.title {
   border: 2px solid #aaa;
 }
 footer.footer-two > div.websites > div.website > div.url {
-  padding: 40px 0px;
+  padding-top: 40px;
+}
+footer.footer-two > div.websites > div.website > div.description {
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #ddd;
 }
 footer.footer-two > div.websites > div.website > a {
   bottom: -20px;
   right: 30px;
   background-color: #444;
   border: 2px solid #444;
+  transition: 0.4s;
+}
+footer.footer-two > div.websites > div.website > a:hover, footer.footer-two > div.websites > div.website > a:focus {
+  border-color: #aaa;
 }
 
 div.nextprev {
@@ -522,13 +521,21 @@ div.nextprev > div {
   width: 50%;
 }
 div.nextprev > div > a {
+  position: relative;
+  z-index: 10;
   display: inline-block;
+  overflow: hidden;
   min-width: 45%;
   padding: 15px 15px;
   text-decoration: none;
   background-color: #fff;
   border: 2px solid #ddd;
   transition: all 0.4s;
+}
+@media (max-device-width: 720px) {
+  div.nextprev > div > a {
+    display: block;
+  }
 }
 div.nextprev > div > a > div.title, div.nextprev > div > a > div.sub {
   font-size: 12px;
@@ -541,8 +548,23 @@ div.nextprev > div > a > div.name {
   padding: 20px 0px;
   transition: all 0.4s;
 }
+div.nextprev > div > a::after {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  top: 100%;
+  left: 0px;
+  content: "";
+  transition: 0.4s;
+}
 div.nextprev > div > a:hover, div.nextprev > div > a:focus {
   border-color: #666;
+}
+div.nextprev > div > a:hover::after, div.nextprev > div > a:focus::after {
+  top: 0%;
 }
 div.nextprev > div > a:hover > div.name, div.nextprev > div > a:focus > div.name {
   padding-left: 10px;
@@ -589,6 +611,80 @@ div.pagination > a.current {
   color: #777;
 }
 
+div.palette {
+  display: block;
+  margin: 40px 10px;
+  margin-bottom: 150px;
+}
+div.palette > div.title > h2 > a {
+  text-decoration: none;
+  color: #000;
+}
+
+div.colorshelf {
+  margin-bottom: 40px;
+}
+@media (max-device-width: 720px) {
+  div.colorshelf {
+    font-size: 0;
+  }
+}
+div.colorshelf > div.colorbox {
+  display: inline-block;
+  width: 100px;
+  background-color: #fff;
+}
+@media (max-device-width: 720px) {
+  div.colorshelf > div.colorbox {
+    width: 60px;
+  }
+}
+div.colorshelf > div.colorbox:nth-child(even) {
+  background-color: #eee;
+}
+div.colorshelf > div.colorbox > p {
+  margin: 0;
+  height: 60px;
+}
+div.colorshelf > div.colorbox > b {
+  text-align: center;
+  display: block;
+  padding: 10px;
+}
+@media (max-device-width: 720px) {
+  div.colorshelf > div.colorbox > b {
+    display: none;
+  }
+}
+
+div.type > h4 > span.in {
+  padding: 0px 5px;
+}
+div.type > h4 > a {
+  background-color: #fff;
+  padding: 8px 10px;
+  display: inline-block;
+  border: 2px solid #ccc;
+  margin-left: 5px;
+  transition: all 0.4s;
+}
+div.type > h4 > a:hover, div.type > h4 > a:focus {
+  border-color: blue;
+}
+
+div.hues > a.hue {
+  display: inline-block;
+  background-color: #fff;
+  padding: 8px 10px;
+  border: 2px solid #ccc;
+  margin: 5px 10px;
+  font-weight: bold;
+  transition: all 0.4s;
+}
+div.hues > a.hue:hover, div.hues > a.hue:focus {
+  border-color: blue;
+}
+
 div.downloads {
   margin: auto 40px;
 }
@@ -619,7 +715,7 @@ div.download.HD > div.top > span.HD {
 div.download.HD > div.bottom > a {
   color: blue;
 }
-div.download.HD > div.bottom > a:hover {
+div.download.HD > div.bottom > a:hover, div.download.HD > div.bottom > a:focus {
   border-bottom-color: blue;
 }
 div.download.FHD {
@@ -631,7 +727,7 @@ div.download.FHD > div.top > span.FHD {
 div.download.FHD > div.bottom > a {
   color: #14b871;
 }
-div.download.FHD > div.bottom > a:hover {
+div.download.FHD > div.bottom > a:hover, div.download.FHD > div.bottom > a:focus {
   border-bottom-color: #14b871;
 }
 div.download.QHD {
@@ -643,7 +739,7 @@ div.download.QHD > div.top > span.QHD {
 div.download.QHD > div.bottom > a {
   color: red;
 }
-div.download.QHD > div.bottom > a:hover {
+div.download.QHD > div.bottom > a:hover, div.download.QHD > div.bottom > a:focus {
   border-bottom-color: red;
 }
 div.download.UHD {
@@ -655,7 +751,7 @@ div.download.UHD > div.top > span.UHD {
 div.download.UHD > div.bottom > a {
   color: #b81487;
 }
-div.download.UHD > div.bottom > a:hover {
+div.download.UHD > div.bottom > a:hover, div.download.UHD > div.bottom > a:focus {
   border-bottom-color: #b81487;
 }
 div.download > div.top {
