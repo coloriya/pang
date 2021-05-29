@@ -64,6 +64,22 @@
 			"name": "complementary"
 		},
 		{
+			"title": "Triadic",
+			"name": "triadic"
+		},
+		{
+			"title": "Tetradic",
+			"name": "tetradic"
+		},
+		{
+			"title": "Pentagonal",
+			"name": "pentagonal"
+		},
+		{
+			"title": "Hexagonal",
+			"name": "hexagonal"
+		},
+		{
 			"title": "Split-complementary",
 			"name": "split-complementary"
 		},

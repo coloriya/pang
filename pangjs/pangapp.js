@@ -2,6 +2,7 @@
 const fs = require("fs");
 
 const PangPalette = require("./palette");
+const PangPaletteType = require("./palette_type");
 const PangPage = require("./page");
 const PangDownloadable = require("./downloadable");
 const PangResolution = require("./resolution");
@@ -21,6 +22,7 @@ function PangApp () {
 	this.nlx = "\n";
 
 	this.setupPalettes();
+	this.setupPaletteTypes();
 	this.setupPages();
 	this.setupDownloadables();
 	this.setupResolutions();
@@ -36,6 +38,14 @@ PangApp.prototype.setupPalettes = function () {
 		this.palettes.push(palette);
 	}
 	this.numberOfPalettes = this.palettes.length;
+}
+
+PangApp.prototype.setupPaletteTypes = function () {
+	this.palette_types = [];
+	for (let palette_type_json of this.preferences.palette_types) {
+		let palette_type = new PangPaletteType(this, palette_type_json);
+		this.palette_types.push(palette_type);
+	}
 }
 
 PangApp.prototype.setupPages = function () {
@@ -88,6 +98,13 @@ PangApp.prototype.getLastPage = function () {
 PangApp.prototype.getLastPalette = function () {
 	if (this.palettes.length) {
 		return this.palettes[this.palettes.length - 1];
+	}
+	return null;
+}
+
+PangApp.prototype.getLastPaletteType = function () {
+	if (this.palette_types.length) {
+		return this.palette_types[this.palette_types.length - 1];
 	}
 	return null;
 }

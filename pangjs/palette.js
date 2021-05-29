@@ -13,6 +13,7 @@ function PangPalette (app, json) {
 	this.json = json;
 	this.id = json.id;
 	this.page = null;
+	this.type = null;
 
 	this.next = null;
 	this.prev = this.app.getLastPalette();
