@@ -27,6 +27,10 @@ switch (command) {
 	case "typescss":
 		pang.savePaletteTypeCss(arg);
 		break;
+	case "hc":
+	case "huescss":
+		pang.saveHuesCss(arg);
+		break;
 
 	case "html":
 		pang.saveHtml(arg);
@@ -43,6 +47,10 @@ switch (command) {
 	case "th":
 	case "typeshtml":
 		pang.savePaletteTypeHtml(arg);
+		break;
+	case "hh":
+	case "hueshtml":
+		pang.saveHuesHtml(arg);
 		break;
 
 	default:

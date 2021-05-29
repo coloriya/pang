@@ -160,6 +160,17 @@ PangApp.prototype.getPaletteType = function (arg) {
 	return null;
 }
 
+PangApp.prototype.getHue = function (arg) {
+	if (arg) {
+		for (let hue of this.hues) {
+			if (hue.contains(arg)) {
+				return hue;
+			}
+		}
+	}
+	return null;
+}
+
 
 
 PangApp.prototype.getNumberOfPages = function () {
@@ -219,10 +230,24 @@ PangApp.prototype.savePaletteTypeCss = function (arg) {
 	}
 }
 
+PangApp.prototype.saveHuesCss = function (arg) {
+	if (!arg) {
+		for (let hue of this.hues) {
+			hue.saveCss();
+		}
+	} else {
+		let hue = this.getHue(arg);
+		if (hue) {
+			hue.saveCss();
+		}
+	}
+}
+
 PangApp.prototype.saveCss = function (arg) {
 	this.savePageCss(arg);
 	this.savePaletteCss(arg);
 	this.savePaletteTypeCss(arg);
+	this.saveHuesCss(arg);
 }
 
 
@@ -266,10 +291,24 @@ PangApp.prototype.savePaletteTypeHtml = function (arg) {
 	}
 }
 
+PangApp.prototype.saveHuesHtml = function (arg) {
+	if (!arg) {
+		for (let hue of this.hues) {
+			hue.saveHtml();
+		}
+	} else {
+		let hue = this.getHue(arg);
+		if (hue) {
+			hue.saveHtml();
+		}
+	}
+}
+
 PangApp.prototype.saveHtml = function (arg) {
 	this.savePageHtml(arg);
 	this.savePaletteHtml(arg);
 	this.savePaletteTypeHtml(arg);
+	this.saveHuesHtml(arg);
 }
 
 
