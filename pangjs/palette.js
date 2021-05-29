@@ -13,7 +13,9 @@ function PangPalette (app, json) {
 	this.json = json;
 	this.id = json.id;
 	this.page = null;
+
 	this.type = null;
+	this.type_index = 0;
 	this.hues = [];
 
 	this.next = null;
@@ -58,6 +60,10 @@ PangPalette.prototype.getBaseDepth = function () {
 
 PangPalette.prototype.getRelativeURL = function () {
 	return this.relativeURL;
+}
+
+PangPalette.prototype.getTypeNIndex = function () {
+	return this.type_index + 1;
 }
 
 

@@ -44,3 +44,23 @@ div.colorshelf {
 }
 
 
+
+div.type {
+	& > h4 {
+		& > span.n {
+			//
+		}
+		& > span.in {
+			padding: 0px 5px;
+		}
+		& > a {
+			background-color: #fff;
+			padding: 8px 10px;
+			display: inline-block;
+			border: 2px solid #ccc;
+			margin-left: 5px;
+		}
+	}
+}
+
+

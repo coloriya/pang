@@ -17,9 +17,14 @@ function PangPaletteType (app, json) {
 	for (let palette of this.app.palettes) {
 		if (palette.json.type == this.name) {
 			palette.type = this;
+			palette.type_index = this.palettes.length;
 			this.palettes.push(palette);
 		}
 	}
+}
+
+PangPaletteType.prototype.getHref = function () {
+	return this.name;
 }
 
 PangPaletteType.prototype.getNumberOfPalettes = function () {
