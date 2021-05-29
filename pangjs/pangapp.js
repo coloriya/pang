@@ -23,21 +23,13 @@ function PangApp () {
 	this.nl = "<!-- \n -->";
 	this.nlx = "\n";
 
-	this.setupHues();
 	this.setupPalettes();
 	this.setupPaletteTypes();
+	this.setupHues();
 	this.setupPages();
 	this.setupDownloadables();
 	this.setupResolutions();
 	this.setupTemplates();
-}
-
-PangApp.prototype.setupHues = function () {
-	this.hues = [];
-	for (let h=0; h<36; h++) {
-		let hue = new PangHue(this, h*10);
-		this.hues.push(hue);
-	}
 }
 
 PangApp.prototype.setupPalettes = function () {
@@ -56,6 +48,14 @@ PangApp.prototype.setupPaletteTypes = function () {
 	for (let palette_type_json of this.preferences.palette_types) {
 		let palette_type = new PangPaletteType(this, palette_type_json);
 		this.palette_types.push(palette_type);
+	}
+}
+
+PangApp.prototype.setupHues = function () {
+	this.hues = [];
+	for (let h=0; h<36; h++) {
+		let hue = new PangHue(this, h*10);
+		this.hues.push(hue);
 	}
 }
 
