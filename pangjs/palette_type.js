@@ -1,4 +1,6 @@
 
+const PangPaletteTypePage = require("./palette_type_page");
+
 
 
 function PangPaletteType (app, json) {
@@ -22,6 +24,14 @@ function PangPaletteType (app, json) {
 			this.palettes.push(palette);
 		}
 	}
+
+	this.pageLength = this.app.preferences.pageLength;
+	this.numberOfPages = Math.ceil(this.getNumberOfPalettes() / this.pageLength);
+	this.pages = [];
+	for (let pageNumber = 1; pageNumber <= this.numberOfPages; pageNumber++) {
+		let page = new PangPaletteTypePage(this, pageNumber);
+		this.pages.push(page);
+	}
 }
 
 PangPaletteType.prototype.getHref = function () {
@@ -32,8 +42,18 @@ PangPaletteType.prototype.getNumberOfPalettes = function () {
 	return this.palettes.length;
 }
 
+PangPaletteType.prototype.getNumberOfPages = function () {
+	return this.pages.length;
+}
+
+PangPaletteType.prototype.getLastPage = function () {
+	return this.palettes[this.palettes.length - 1];
+}
+
 PangPaletteType.prototype.consoleLog = function () {
-	console.log(`Type '${this.name}' has ${this.getNumberOfPalettes()} palettes.`);
+	console.log(`\tPalette type '${this.name}':`);
+	console.log(`\t\t(${this.getNumberOfPalettes()} palettes)`);
+	console.log(`\t\t(${this.getNumberOfPages()} pages)`);
 }
 
 
