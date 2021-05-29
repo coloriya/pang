@@ -50,6 +50,21 @@ footer.footer-zero > div.inner > div {
 }
 
 
+
+footer.footer-zero-point-five {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 80px 20px;
+	& > div.inner {
+		h1 {
+			//font-size: 64px;
+		}
+	}
+}
+
+
+
 footer.footer-one {
 	background-color: #fff;
 	& > div.repos {
