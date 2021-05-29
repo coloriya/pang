@@ -35,7 +35,7 @@ function PangPaletteType (app, json) {
 }
 
 const PangBaseClass = require("./baseclass");
-PangPaletteType.prototype = new PangBaseClass;
+PangPaletteType.prototype = new PangBaseClass();
 
 
 

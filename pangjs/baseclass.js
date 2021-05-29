@@ -14,7 +14,7 @@ PangBaseClass.prototype.getNumberOfPages = function () {
 }
 
 PangBaseClass.prototype.getLastPage = function () {
-	return this.palettes[this.palettes.length - 1];
+	return this.pages[this.pages.length - 1];
 }
 
 
