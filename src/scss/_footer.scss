@@ -80,7 +80,12 @@ footer.footer-two > div.websites {
 			border: 2px solid $footer-two-bdc;
 		}
 		& > div.url {
-			padding: 40px 0px;
+			padding-top: 40px;
+		}
+		& > div.description {
+			padding-bottom: 10px;
+			font-size: 14px;
+			color: #ddd;
 		}
 		& > a {
 			bottom: -20px;

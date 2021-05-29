@@ -19,14 +19,17 @@
 			"websites": [
 				{
 					"name": "GitHub",
+					"description": "The code for some of my public projects is here. Also a few websites that I host on GitHub pages.",
 					"url": "https://github.com/iaseth"
 				},
 				{
 					"name": "Twitter",
+					"description": "I do not frequently use Twitter. This account is mostly just a placeholder.",
 					"url": "https://twitter.com/iankurseth"
 				},
 				{
 					"name": "Website",
+					"description": "My personal webpage. It doesn't contain much right now. I expect to update it in future.",
 					"url": "https://ankurseth.in"
 				}
 			]
