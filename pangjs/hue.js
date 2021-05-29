@@ -55,11 +55,13 @@ PangHue.prototype.consoleLog = function () {
 
 PangHue.prototype.saveCss = function () {
 	this.consoleLog();
-	console.log(`\tSaved CSS for Hue #${this.hue_start}.`)
+	console.log(`\tSaved CSS for Hue #${this.hue_start}.`);
 }
 
 PangHue.prototype.saveHtml = function () {
-	console.log(`\tSaved HTML for Hue #${this.hue_start}.`)
+	for (let page of this.pages) {
+		page.saveHtml();
+	}
 }
 
 

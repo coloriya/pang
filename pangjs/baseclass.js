@@ -19,4 +19,17 @@ PangBaseClass.prototype.getLastPage = function () {
 
 
 
+PangBaseClass.prototype.getRelativeURL = function () {
+	return this.relativeURL;
+}
+
+PangBaseClass.prototype.getBaseDepth = function () {
+	if (this.htmlPath) {
+		return this.htmlPath.split("/").length;
+	}
+	return 2;
+}
+
+
+
 module.exports = PangBaseClass;

@@ -18,6 +18,10 @@ html(lang="en")
 			base(href="../")
 		else if me.getBaseDepth() == 2
 			base(href="../../")
+		else if me.getBaseDepth() == 3
+			base(href="../../../")
+		else if me.getBaseDepth() == 4
+			base(href="../../../../")
 		else
 			base(href="")
 
