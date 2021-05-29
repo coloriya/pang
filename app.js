@@ -14,13 +14,16 @@ switch (command) {
 	case "css":
 		pang.saveCss(arg);
 		break;
+	case "gc":
 	case "pagescss":
 		pang.savePageCss(arg);
 		break;
+	case "lc":
 	case "palscss":
 	case "palettescss":
 		pang.savePaletteCss(arg);
 		break;
+	case "tc":
 	case "typescss":
 		pang.savePaletteTypeCss(arg);
 		break;
@@ -28,13 +31,16 @@ switch (command) {
 	case "html":
 		pang.saveHtml(arg);
 		break;
+	case "gh":
 	case "pageshtml":
 		pang.savePageHtml(arg);
 		break;
+	case "lh":
 	case "palshtml":
 	case "paletteshtml":
 		pang.savePaletteHtml(arg);
 		break;
+	case "th":
 	case "typeshtml":
 		pang.savePaletteTypeHtml(arg);
 		break;
