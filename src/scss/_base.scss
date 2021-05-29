@@ -39,45 +39,6 @@ content.pyp-content {
 
 
 
-div.colorshelf {
-	margin-bottom: 60px;
-	& > div.colorbox {
-		display: inline-block;
-		width: 100px;
-		background-color: #fff;
-		&:nth-child(even) {
-			background-color: #eee;
-		}
-		& > p {
-			margin: 0;
-			height: 70px;
-		}
-		& > b {
-			text-align: center;
-			display: block;
-			padding: 10px;
-		}
-	}
-}
-
-
-
-div.palette {
-	display: block;
-	margin: 40px 30px;
-	margin-bottom: 100px;
-	& > div.title {
-		& > h2 {
-			& > a {
-				text-decoration: none;
-				color: #000;
-			}
-		}
-	}
-}
-
-
-
 div.palette-detail {
 	margin: 60px auto;
 	text-align: center;

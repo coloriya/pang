@@ -1,0 +1,46 @@
+
+div.palette {
+	display: block;
+	margin: 40px 10px;
+	margin-bottom: 100px;
+	& > div.title {
+		& > h2 {
+			& > a {
+				text-decoration: none;
+				color: #000;
+			}
+		}
+	}
+}
+
+div.colorshelf {
+	margin-bottom: 60px;
+	@include mobile {
+		font-size: 0;
+	}
+	& > div.colorbox {
+		display: inline-block;
+		width: 100px;
+		background-color: #fff;
+		@include mobile {
+			width: 60px;
+		}
+		&:nth-child(even) {
+			background-color: #eee;
+		}
+		& > p {
+			margin: 0;
+			height: 60px;
+		}
+		& > b {
+			text-align: center;
+			display: block;
+			padding: 10px;
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+}
+
+
