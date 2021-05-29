@@ -7,8 +7,25 @@ function PangHue (app, hue) {
 	this.app = app;
 	this.hue_start = hue;
 	this.hue_end = hue + 9;
+
 	this.palettes = [];
+	for (let palette of this.app.palettes) {
+		for (let h of palette.json.hues) {
+			if (this.contains(h)) {
+				palette.hues.push(this);
+				this.palettes.push(palette);
+				break;
+			}
+		}
+	}
+
+	this.pageLength = this.app.preferences.pageLength;
+	this.numberOfPages = Math.ceil(this.getNumberOfPalettes() / this.pageLength);
 	this.pages = [];
+	for (let pageNumber = 1; pageNumber <= this.numberOfPages; pageNumber++) {
+		let page = new PangHuePage(this, pageNumber);
+		this.pages.push(page);
+	}
 }
 
 PangHue.prototype.contains = function (arg) {
@@ -23,13 +40,24 @@ PangHue.prototype.getNumberOfPalettes = function () {
 	return this.palettes.length;
 }
 
+PangHue.prototype.getNumberOfPages = function () {
+	return this.pages.length;
+}
+
+PangHue.prototype.getLastPage = function () {
+	return this.palettes[this.palettes.length - 1];
+}
+
 PangHue.prototype.consoleLog = function () {
-	console.log(`Hue '${this.hue}' has ${this.getNumberOfPalettes()} palettes.`);
+	console.log(`\tHue '${this.hue_start}' [${this.hue_start} to ${this.hue_end}]`);
+	console.log(`\t\t(${this.getNumberOfPalettes()} palettes)`);
+	console.log(`\t\t(${this.getNumberOfPages()} pages)`);
 }
 
 
 
 PangHue.prototype.saveCss = function () {
+	this.consoleLog();
 	console.log(`\tSaved CSS for Hue #${this.hue_start}.`)
 }
 
