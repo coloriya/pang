@@ -28,6 +28,12 @@ footer.footer-one {
 						background-color: #a7d9ff;
 						padding: 10px 12px;
 						font-size: 14px;
+						border: 2px solid #a7d9ff;
+						transition: 0.4s;
+						&:hover, &:focus {
+							background-color: #4799eb;
+							color: white;
+						}
 					}
 				}
 			}
@@ -64,7 +70,7 @@ footer.footer-two > div.websites {
 		& > div.title, & > a {
 			position: absolute;
 			font-size: 14px;
-			display: inline-block;
+			display: block;
 			background-color: $footer-two-bg;
 			padding: 8px 12px;
 			color: #fff;
@@ -81,6 +87,11 @@ footer.footer-two > div.websites {
 			right: 30px;
 			background-color: #444;
 			border: 2px solid #444;
+			transition: 0.4s;
+			//border: 2px solid transparent;
+			&:hover, &:focus {
+				border-color: $footer-two-bdc;
+			}
 		}
 	}
 }

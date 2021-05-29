@@ -27,8 +27,10 @@ div.download {
 		&.#{$res} > div.bottom > a {
 			color: $color;
 		}
-		&.#{$res} > div.bottom > a:hover {
-			border-bottom-color: $color;
+		&.#{$res} > div.bottom > a {
+			&:hover, &:focus {
+				border-bottom-color: $color;
+			}
 		}
 	}
 
