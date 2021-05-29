@@ -1,8 +1,10 @@
 
 const fs = require("fs");
 
+const PangHue = require("./hue");
 const PangPalette = require("./palette");
 const PangPaletteType = require("./palette_type");
+
 const PangPage = require("./page");
 const PangDownloadable = require("./downloadable");
 const PangResolution = require("./resolution");
@@ -21,12 +23,21 @@ function PangApp () {
 	this.nl = "<!-- \n -->";
 	this.nlx = "\n";
 
+	this.setupHues();
 	this.setupPalettes();
 	this.setupPaletteTypes();
 	this.setupPages();
 	this.setupDownloadables();
 	this.setupResolutions();
 	this.setupTemplates();
+}
+
+PangApp.prototype.setupHues = function () {
+	this.hues = [];
+	for (let h=0; h<36; h++) {
+		let hue = new PangHue(this, h*10);
+		this.hues.push(hue);
+	}
 }
 
 PangApp.prototype.setupPalettes = function () {

@@ -22,12 +22,12 @@ function PangPaletteType (app, json) {
 	}
 }
 
-PangPaletteType.prototype.getNumberOfPages = function () {
+PangPaletteType.prototype.getNumberOfPalettes = function () {
 	return this.palettes.length;
 }
 
 PangPaletteType.prototype.consoleLog = function () {
-	console.log(`Type '${this.name}' has ${this.getNumberOfPages()} palettes.`);
+	console.log(`Type '${this.name}' has ${this.getNumberOfPalettes()} palettes.`);
 }
 
 
