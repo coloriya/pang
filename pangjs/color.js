@@ -24,6 +24,10 @@ PangColor.prototype.getClassName = function () {
 	return `pyp${this.palette.id}c${this.getNIndex()}`;
 }
 
+PangColor.prototype.getBgStyle = function () {
+	return "background: " + this.getHexCode();
+}
+
 PangColor.prototype.getCssText = function () {
 	return `.${this.getClassName()} {background: ${this.json.hex};}\n`;
 }

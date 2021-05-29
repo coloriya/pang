@@ -14,7 +14,8 @@ mixin PangDownload(download)
 
 mixin Colorbox(color)
 	div.colorbox
-		p(class=color.getClassName())
+		//-p(class=color.getClassName())
+		p(style=color.getBgStyle())
 		b= color.getHexCode()
 
 mixin Colorshelf(palette)
@@ -45,5 +46,25 @@ mixin NextPreviousPageLinks(me)
 					div.title= me.next.getTitle()
 					div.name Next
 					div.sub= me.next.getSubTitle()
+
+
+
+mixin PaletteList(palettes)
+	each palette in palettes
+		| !{app.nl}
+		div.palette
+			div.title
+				h2
+					- let href = `palette/${palette.id}`;
+					a(href=href) Palette no. #{palette.id}
+			div.type
+				h4
+					span.n ##{palette.getTypeNIndex()} 
+					span.in in
+					a(href=palette.type.getHref())= palette.type.title
+			+Colorshelf(palette)
+			div.hues
+				each hue in palette.hues
+					a.hue(href=hue.getHref()) Hue #{hue.hue_start}&deg;
 
 
