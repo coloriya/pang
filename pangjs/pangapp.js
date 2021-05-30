@@ -210,8 +210,25 @@ PangApp.prototype.getOnePaletteFromEachType = function () {
 
 
 
+PangApp.prototype.deleteRectanglePNGs = function () {
+	for (let palette of this.palettes) {
+		if (palette.type.name == "rectangular") {
+			console.log();
+			let downloads = palette.getDownloads();
+			for (let download of downloads) {
+				let filepath = download.getPath();
+				if (fs.existsSync(filepath)) {
+					console.log(`\tFound: ${filepath}`);
+					fs.unlinkSync(filepath);
+					console.log(`\t\tdeleted: ${filepath}`);
+				}
+			}
+		}
+	}
+}
+
 PangApp.prototype.doAnExperiment = function () {
-	//
+	this.deleteRectanglePNGs();
 }
 
 
