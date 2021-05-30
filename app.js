@@ -57,6 +57,11 @@ switch (command) {
 		pang.saveHuesHtml(arg);
 		break;
 
+	case "j":
+	case "json":
+		pang.produceJsons();
+		break;
+
 	case "x":
 	case "experiment":
 		pang.doAnExperiment();

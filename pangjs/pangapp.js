@@ -210,6 +210,15 @@ PangApp.prototype.getOnePaletteFromEachType = function () {
 
 
 
+PangApp.prototype.produceJsons = function () {
+	console.log("\tProducing JSONs:");
+	for (let palette of this.palettes) {
+		palette.produceJson();
+	}
+}
+
+
+
 PangApp.prototype.deleteRectanglePNGs = function () {
 	for (let palette of this.palettes) {
 		if (palette.type.name == "rectangular") {

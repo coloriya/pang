@@ -125,6 +125,13 @@ PangPalette.prototype.saveHtml = function () {
 	console.log(`\tSaved HTML for palette: ${this.htmlPath}`);
 }
 
+PangPalette.prototype.produceJson = function () {
+	let json_filename = `${this.id}.json`;
+	let json_path = path.join(this.app.paths.jsonOutputDir, json_filename);
+	fs.writeFileSync(json_path, JSON.stringify(this.json));
+	console.log(`\t\t- Palette #${this.id}: saved (${json_path})`);
+}
+
 
 
 module.exports = PangPalette;

@@ -6,7 +6,8 @@
 		"templates": "src/pug",
 		"output": "docs",
 		"downloadables": "dist/img/palettes",
-		"argsJson": "../pang-cpp/build/args.json"
+		"argsJson": "../pang-cpp/build/args.json",
+		"jsonOutputDir": "docs/json"
 	},
 
 	"pageLength": 20,
