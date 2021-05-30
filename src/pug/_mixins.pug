@@ -61,10 +61,24 @@ mixin PaletteList(palettes)
 				h4
 					span.n ##{palette.getTypeNIndex()} 
 					span.in in
-					a(href=palette.type.getHref())= palette.type.title
+					+TypeLinkButton(palette.type)
 			+Colorshelf(palette)
 			div.hues
 				each hue in palette.hues
-					a.hue(href=hue.getHref()) Hue #{hue.hue_start}&deg;
+					+HueLinkButton(hue)
+
+
+
+
+mixin HueLinkButton(hue)
+	a.hue-link-button(href=hue.getHref())
+		span.text Hue #{hue.hue_start}&deg;
+		span.count= hue.getNumberOfPalettes()
+
+mixin TypeLinkButton(type)
+	a.type-link-button(href=type.getHref())
+		span.text= type.title
+		span.count= type.getNumberOfPalettes()
+
 
 

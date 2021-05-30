@@ -54,31 +54,7 @@ div.type {
 			padding: 0px 5px;
 		}
 		& > a {
-			background-color: #fff;
-			padding: 8px 10px;
-			display: inline-block;
-			border: 2px solid #ccc;
-			margin-left: 5px;
-			transition: all 0.4s;
-			&:hover, &:focus {
-				border-color: blue;
-			}
-		}
-	}
-}
-
-div.hues {
-	& > a.hue {
-		display: inline-block;
-		background-color: #fff;
-		padding: 8px 10px;
-		border: 2px solid #ccc;
-		margin: 5px 10px;
-		font-size: 14px;
-		font-weight: bold;
-		transition: all 0.4s;
-		&:hover, &:focus {
-			border-color: blue;
+			//
 		}
 	}
 }

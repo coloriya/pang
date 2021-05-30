@@ -35,6 +35,10 @@ switch (command) {
 	case "html":
 		pang.saveHtml(arg);
 		break;
+	case "ah":
+	case "apphtml":
+		pang.saveAppHtml(arg);
+		break;
 	case "gh":
 	case "pageshtml":
 		pang.savePageHtml(arg);

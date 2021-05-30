@@ -72,19 +72,19 @@ html(lang="en")
 						h3 Browse by type
 					div.content
 						for palette_type in app.palette_types
-							a.type(href=palette_type.getHref())= palette_type.title
+							+TypeLinkButton(palette_type)
 							| !{app.nl}
 				div.hues
 					div.title
 						h3 Browse by hue
 					div.content
 						for hue in app.hues
-							a.hue(href=hue.getHref()) Hue #{hue.hue_start}&deg;
+							+HueLinkButton(hue)
 							| !{app.nl}
 
 		footer.footer-zero-point-five
 			div.inner
-				h4 coloriya's
+				h4= "coloriya's"
 				h1 pang
 
 		footer.footer-one
