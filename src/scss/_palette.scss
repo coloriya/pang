@@ -13,6 +13,11 @@ div.palette-detail {
 		background-color: #fff;
 		&.header {
 			width: 40px;
+			@include mobile {
+				&:last-child {
+					display: none;
+				}
+			}
 		}
 		& > b {
 			display: block;

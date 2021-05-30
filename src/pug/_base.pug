@@ -50,8 +50,12 @@ html(lang="en")
 						h4= "coloriya's"
 						h1 pang
 				div.title
-					h1= me.getTitle()
+					if palette
+						+PaletteType(palette)
+					h1= me.getHeaderTitle()
 					h4= me.getSubTitle()
+					if palette
+						+PaletteHues(palette)
 
 			| !{app.nl}
 			div.back-to-parent

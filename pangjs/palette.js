@@ -54,6 +54,10 @@ PangPalette.prototype.getTitle = function () {
 	return `${this.app.getTitle()} | palette | ${this.id}`;
 }
 
+PangPalette.prototype.getHeaderTitle = function () {
+	return `Palette #${this.id}`;
+}
+
 PangPalette.prototype.getSubTitle = function () {
 	return `${this.colors.length} colors`;
 }

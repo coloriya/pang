@@ -57,16 +57,24 @@ mixin PaletteList(palettes)
 				h2
 					- let href = `palette/${palette.id}`;
 					a(href=href) Palette no. #{palette.id}
-			div.type
-				h4
-					span.n ##{palette.getTypeNIndex()} 
-					span.in in
-					+TypeLinkButton(palette.type)
+			+PaletteType(palette)
 			+Colorshelf(palette)
-			div.hues
-				each hue in palette.hues
-					+HueLinkButton(hue)
+			+PaletteHues(palette)
 
+
+
+
+mixin PaletteType(palette)
+	div.type
+		h4
+			span.n ##{palette.getTypeNIndex()} 
+			span.in in
+			+TypeLinkButton(palette.type)
+
+mixin PaletteHues(palette)
+	div.hues
+		each hue in palette.hues
+			+HueLinkButton(hue)
 
 
 
