@@ -393,17 +393,61 @@ header.pyp-header > div.inner {
 header.pyp-header > div.inner > div {
   display: inline-block;
   vertical-align: top;
-  padding: 20px 40px;
+  padding: 10px 20px;
 }
 @media (max-device-width: 720px) {
   header.pyp-header > div.inner > div {
     display: block;
   }
 }
+header.pyp-header > div.inner > div.title > h1 {
+  padding-top: 20px;
+}
+header.pyp-header > div.inner > div.title > h4 {
+  padding-bottom: 10px;
+}
+
 header.pyp-header > div.inner > div.home {
-  background-color: #444;
-  min-width: 200px;
   text-align: center;
+}
+header.pyp-header > div.inner > div.home > a {
+  position: relative;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+  min-width: 200px;
+  border: 2px solid #444;
+  transition: 0.4s;
+  overflow: hidden;
+  z-index: 1;
+}
+header.pyp-header > div.inner > div.home > a::after, header.pyp-header > div.inner > div.home > a::before {
+  transition: 0.4s;
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+header.pyp-header > div.inner > div.home > a::before {
+  top: 0;
+  right: 100%;
+  background-color: rgba(200, 0, 0, 0.4);
+}
+header.pyp-header > div.inner > div.home > a::after {
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 200, 0.4);
+}
+header.pyp-header > div.inner > div.home > a:hover, header.pyp-header > div.inner > div.home > a:focus {
+  border-color: #777;
+}
+header.pyp-header > div.inner > div.home > a:hover::before, header.pyp-header > div.inner > div.home > a:focus::before {
+  right: 0%;
+}
+header.pyp-header > div.inner > div.home > a:hover::after, header.pyp-header > div.inner > div.home > a:focus::after {
+  top: 0%;
 }
 
 header.pyp-header > div.back-to-parent {
@@ -724,6 +768,11 @@ div.palette-detail > div.column {
 div.palette-detail > div.column.header {
   width: 40px;
 }
+@media (max-device-width: 720px) {
+  div.palette-detail > div.column.header:last-child {
+    display: none;
+  }
+}
 div.palette-detail > div.column > b {
   display: block;
   padding: 10px;
@@ -850,13 +899,25 @@ div.download > div.bottom > span.size {
   color: #555;
 }
 
+header a.hue-link-button, header a.type-link-button {
+  background-color: #444;
+}
+
+a.hue-link-button {
+  margin: 10px 16px;
+  margin-left: 0px;
+}
+
+a.type-link-button {
+  margin: 10px 8px;
+}
+
 a.hue-link-button, a.type-link-button {
   display: inline-block;
   background-color: #fff;
   padding: 10px 8px;
   padding-left: 10px;
   border: 2px solid #ccc;
-  margin: 10px 8px;
   font-weight: bold;
   font-size: 14px;
   transition: 0.4s;
@@ -869,9 +930,6 @@ a.hue-link-button > span.count, a.type-link-button > span.count {
   margin-left: 10px;
   border-radius: 4px;
   transition: 0.4s;
-}
-a.hue-link-button.hue, a.type-link-button.hue {
-  min-width: 120px;
 }
 a.hue-link-button:hover, a.hue-link-button:focus, a.type-link-button:hover, a.type-link-button:focus {
   border-color: blue;
