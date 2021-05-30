@@ -19,7 +19,7 @@ function PangHuePage (hue, number) {
 		this.prev.next = this;
 	}
 
-	this.relativeURL = (this.number == 1) ? this.hue.getHref() : `${this.hue.getHref()}/${this.number}`;
+	this.relativeURL = (this.number == 1) ? this.hue.getHref() : `${this.hue.getHref()}/page/${this.number}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 
 	this.cssURL = `dist/css/hues/hue_${this.number}.css`;
@@ -41,7 +41,7 @@ PangHuePage.prototype.getSubTitle = function () {
 }
 
 PangHuePage.prototype.getBaseDepth = function () {
-	return (this.number == 1) ? 2 : 3;
+	return (this.number == 1) ? 2 : 4;
 }
 
 
@@ -51,7 +51,9 @@ PangHuePage.prototype.saveHtml = function () {
 
 	let dirpath = path.dirname(this.htmlPath);
 	if (!fs.existsSync(dirpath)) {
-		fs.mkdirSync(dirpath);
+		fs.mkdirSync(dirpath, {
+			recursive: true
+		});
 		console.log(`\tCreated directory: ${dirpath}`);
 	}
 

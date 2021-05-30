@@ -19,7 +19,7 @@ function PangPaletteTypePage (type, number) {
 		this.prev.next = this;
 	}
 
-	this.relativeURL = (this.number == 1) ? this.type.getHref() : `${this.type.getHref()}/${this.number}`;
+	this.relativeURL = (this.number == 1) ? this.type.getHref() : `${this.type.getHref()}/page/${this.number}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 
 	// this.cssURL = `dist/css/types/type_${this.type.name}.css`;
@@ -41,7 +41,7 @@ PangPaletteTypePage.prototype.getSubTitle = function () {
 }
 
 PangPaletteTypePage.prototype.getBaseDepth = function () {
-	return (this.number == 1) ? 1 : 2;
+	return (this.number == 1) ? 1 : 3;
 }
 
 
@@ -51,7 +51,9 @@ PangPaletteTypePage.prototype.saveHtml = function () {
 
 	let dirpath = path.dirname(this.htmlPath);
 	if (!fs.existsSync(dirpath)) {
-		fs.mkdirSync(dirpath);
+		fs.mkdirSync(dirpath, {
+			recursive: true
+		});
 		console.log(`\tCreated directory: ${dirpath}`);
 	}
 
