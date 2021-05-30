@@ -45,41 +45,4 @@ content.pyp-content {
 
 
 
-div.palette-detail {
-	margin: 60px auto;
-	text-align: center;
-	& > div.column {
-		display: inline-block;
-		width: 90px;
-		@include mobile {
-			width: 55px;
-		}
-		margin-right: -1px;
-		margin-bottom: 60px;
-		background-color: #fff;
-		&.header {
-			width: 40px;
-		}
-		& > b {
-			display: block;
-			padding: 10px;
-			border: 1px solid #000;
-			margin-bottom: -1px;
-			@include mobile {
-				&.x {
-					display: none;
-				}
-			}
-		}
-		& > b.c {
-			height: 60px;
-			@include mobile {
-				height: 50px;
-			}
-		}
-	}
-}
-
-
-
 

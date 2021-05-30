@@ -5,6 +5,10 @@ function PangBaseClass () {
 	//
 }
 
+PangBaseClass.prototype.getSubTitle = function () {
+	return `${this.getNumberOfPalettes()} palettes`;
+}
+
 PangBaseClass.prototype.getNumberOfPalettes = function () {
 	return this.palettes.length;
 }
