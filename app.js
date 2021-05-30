@@ -57,6 +57,11 @@ switch (command) {
 		pang.saveHuesHtml(arg);
 		break;
 
+	case "x":
+	case "experiment":
+		pang.doAnExperiment();
+		break;
+
 	default:
 		console.log(`Unknown command: '${command}'`);
 }

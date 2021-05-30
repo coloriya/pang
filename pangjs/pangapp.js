@@ -210,6 +210,12 @@ PangApp.prototype.getOnePaletteFromEachType = function () {
 
 
 
+PangApp.prototype.doAnExperiment = function () {
+	//
+}
+
+
+
 PangApp.prototype.savePageCss = function (arg) {
 	if (!arg) {
 		for (let page of this.pages) {
