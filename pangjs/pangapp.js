@@ -1,5 +1,6 @@
 
 const fs = require("fs");
+const path = require("path");
 
 const PangHue = require("./hue");
 const PangPalette = require("./palette");
@@ -22,6 +23,9 @@ function PangApp () {
 	this.alphabet = "abcdefghijklmnopqrstuvwxyz";
 	this.nl = "<!-- \n -->";
 	this.nlx = "\n";
+
+	this.relativeURL = "";
+	this.htmlPath = path.join(this.paths.output, this.relativeURL, "index.html");
 
 	this.setupPalettes();
 	this.setupPaletteTypes();
@@ -95,6 +99,7 @@ PangApp.prototype.setupTemplates = function () {
 		page: new PangTemplate(this, "page"),
 		hue: new PangTemplate(this, "hue"),
 
+		home: new PangTemplate(this, "home"),
 		type: new PangTemplate(this, "type"),
 		palette: new PangTemplate(this, "palette")
 	};
@@ -104,6 +109,10 @@ PangApp.prototype.setupTemplates = function () {
 
 PangApp.prototype.getTitle = function () {
 	return this.meta.title;
+}
+
+PangApp.prototype.getBaseDepth = function () {
+	return 0;
 }
 
 PangApp.prototype.getLastPage = function () {
@@ -191,6 +200,14 @@ PangApp.prototype.getNumberOfResolutions = function () {
 	return this.resolutions.length;
 }
 
+PangApp.prototype.getOnePaletteFromEachType = function () {
+	let palettes = [];
+	for (let palette_type of this.palette_types) {
+		palettes.push(palette_type.palettes[0]);
+	}
+	return palettes;
+}
+
 
 
 PangApp.prototype.savePageCss = function (arg) {
@@ -254,6 +271,17 @@ PangApp.prototype.saveCss = function (arg) {
 
 
 
+PangApp.prototype.saveAppHtml = function () {
+	let pugFunc = this.templates.home.getPug();
+
+	fs.writeFileSync(this.htmlPath, pugFunc({
+		me: this,
+		page: this,
+		app: this
+	}));
+	console.log(`\tSaved HTML for app: ${this.htmlPath}`);
+}
+
 PangApp.prototype.savePageHtml = function (arg) {
 	if (!arg) {
 		for (let page of this.pages) {
@@ -307,6 +335,7 @@ PangApp.prototype.saveHuesHtml = function (arg) {
 }
 
 PangApp.prototype.saveHtml = function (arg) {
+	this.saveAppHtml();
 	this.savePageHtml(arg);
 	this.savePaletteHtml(arg);
 	this.savePaletteTypeHtml(arg);

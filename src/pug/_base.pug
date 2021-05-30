@@ -44,8 +44,15 @@ html(lang="en")
 	body
 		| !{app.nl}
 		header.pyp-header
-			h4= "coloriya's"
-			h1 pang
+			div.inner
+				div.home
+					a(href="")
+						h4= "coloriya's"
+						h1 pang
+				div.title
+					h1= me.getTitle()
+
+			| !{app.nl}
 			div.back-to-parent
 				if me.page
 					a(href=me.page.getRelativeURL()) back to page
@@ -85,7 +92,7 @@ html(lang="en")
 				div.title
 					h3 Repos related to pang:
 				div.content
-					each repo in me.app.meta.repos
+					each repo in app.meta.repos
 						| !{app.nl}
 						div.repo
 							div.title

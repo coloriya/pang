@@ -2,7 +2,39 @@
 header.pyp-header {
 	background-color: #333;
 	color: #fff;
-	padding: 50px;
+	padding: 20px;
+	padding-top: 30px;
 	text-align: center;
-	padding-top: 60px;
 }
+
+header.pyp-header > div.inner {
+	max-width: 1200px;
+	margin: auto;
+	text-align: left;
+	& > div {
+		display: inline-block;
+		vertical-align: top;
+		padding: 20px 40px;
+		@include mobile {
+			display: block;
+		}
+		&.home {
+			background-color: #444;
+			min-width: 200px;
+			text-align: center;
+		}
+	}
+}
+
+
+header.pyp-header > div.back-to-parent {
+	display: none;
+	& > a {
+		display: inline-block;
+		color: #fff;
+		background-color: #555;
+		padding: 10px 20px;
+	}
+}
+
+

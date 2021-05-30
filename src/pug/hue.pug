@@ -3,7 +3,7 @@ extends _base
 block content
 	+PaletteList(hue_page.palettes)
 	div.pagination
-		h2 #{app.getTitle()} | pages
+		h3 Hue #{hue.hue_start}&deg; palettes
 		each p in hue.pages
 			| !{app.nl}
 			if p == page

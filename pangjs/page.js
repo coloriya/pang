@@ -21,7 +21,8 @@ function PangPage (app, number) {
 		this.prev.next = this;
 	}
 
-	this.relativeURL = (this.number == 1) ? "" : `page/${this.number}`;
+	//this.relativeURL = (this.number == 1) ? "" : `page/${this.number}`;
+	this.relativeURL = `page/${this.number}`;
 	this.htmlPath = path.join(this.app.paths.output, this.relativeURL, "index.html");
 
 	this.cssURL = `dist/css/pages/${this.number}.css`;
@@ -34,7 +35,8 @@ PangPage.prototype = new PangBaseClass;
 
 
 PangPage.prototype.getTitle = function () {
-	return (this.number == 1) ? `${this.app.getTitle()} | home` : `${this.app.getTitle()} | page | ` + this.number;
+	//return (this.number == 1) ? `${this.app.getTitle()} | home` : `${this.app.getTitle()} | page | ` + this.number;
+	return `${this.app.getTitle()} | page | ` + this.number;
 }
 
 PangPage.prototype.getSubTitle = function () {
@@ -43,7 +45,7 @@ PangPage.prototype.getSubTitle = function () {
 
 PangPage.prototype.getBaseDepth = function () {
 	if (this.number == 1) {
-		return 0;
+		//return 0;
 	}
 	return 2;
 }
