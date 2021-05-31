@@ -27,6 +27,14 @@ PangBaseClass.prototype.getLastPage = function () {
 
 
 
+PangBaseClass.prototype.getSitemapEntryText = function () {
+	return `<url>\n<loc>${this.getAbsoluteURL()}</loc>\n<lastmod>${this.app.meta.sitemap_date}</lastmod>\n</url>`;
+}
+
+PangBaseClass.prototype.getAbsoluteURL = function () {
+	return `${this.app.meta.home_url}/${this.relativeURL}`;
+}
+
 PangBaseClass.prototype.getRelativeURL = function () {
 	return this.relativeURL;
 }
