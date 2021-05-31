@@ -18,6 +18,7 @@ function PangApp () {
 	this.preferences = JSON.parse(fs.readFileSync("preferences.json"));
 	this.paths = this.preferences.paths;
 	this.meta = this.preferences.meta;
+	this.app = this;
 
 	this.gaText = fs.readFileSync(this.paths.analytics, 'utf8');
 	this.alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -209,7 +210,8 @@ PangApp.prototype.getOnePaletteFromEachType = function () {
 }
 
 PangApp.prototype.getAllWebsitePages = function () {
-	let pages = this.pages.slice();
+	let pages = [this];
+	pages = pages.concat(this.pages);
 	pages = pages.concat(this.palettes);
 	for (let palette_type of this.palette_types) {
 		pages = pages.concat(palette_type.pages);
