@@ -62,6 +62,10 @@ switch (command) {
 		pang.produceJsons();
 		break;
 
+	case "sitemap":
+		pang.produceSitemap();
+		break;
+
 	case "x":
 	case "experiment":
 		pang.doAnExperiment();

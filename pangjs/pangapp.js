@@ -208,7 +208,34 @@ PangApp.prototype.getOnePaletteFromEachType = function () {
 	return palettes;
 }
 
+PangApp.prototype.getAllWebsitePages = function () {
+	let pages = this.pages.slice();
+	pages = pages.concat(this.palettes);
+	for (let palette_type of this.palette_types) {
+		pages = pages.concat(palette_type.pages);
+	}
+	for (let hue of this.hues) {
+		pages = pages.concat(hue.pages);
+	}
+	return pages;
+}
 
+
+
+PangApp.prototype.produceSitemap = function () {
+	let sitemap_path = path.join(this.paths.output, "sitemap.xml");
+	let prefix = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+	let suffix = "</urlset>";
+
+	let sitemap_text = prefix + "\n";
+	let pages = this.getAllWebsitePages();
+	for (let page of pages) {
+		sitemap_text += page.getSitemapEntryText() + "\n";
+	}
+	sitemap_text += suffix;
+	fs.writeFileSync(sitemap_path, sitemap_text);
+	console.log(`\tSaved: ${sitemap_path}`);
+}
 
 PangApp.prototype.produceJsons = function () {
 	console.log("\tProducing JSONs:");
