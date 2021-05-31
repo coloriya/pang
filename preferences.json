@@ -13,6 +13,8 @@
 	"pageLength": 20,
 
 	"meta": {
+		"home_url": "https://pang.ankurseth.in",
+		"sitemap_date": "2021-06-01",
 		"title": "pang",
 		"author": {
 			"name": "Ankur Seth",
