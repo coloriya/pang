@@ -431,8 +431,8 @@ header.pyp-header > div.inner > div.home > a::after, header.pyp-header > div.inn
   z-index: -1;
 }
 header.pyp-header > div.inner > div.home > a::before {
-  top: 0;
-  right: 100%;
+  bottom: 100%;
+  left: 0;
   background-color: rgba(200, 0, 0, 0.4);
 }
 header.pyp-header > div.inner > div.home > a::after {
@@ -444,7 +444,7 @@ header.pyp-header > div.inner > div.home > a:hover, header.pyp-header > div.inne
   border-color: #777;
 }
 header.pyp-header > div.inner > div.home > a:hover::before, header.pyp-header > div.inner > div.home > a:focus::before {
-  right: 0%;
+  bottom: 0%;
 }
 header.pyp-header > div.inner > div.home > a:hover::after, header.pyp-header > div.inner > div.home > a:focus::after {
   top: 0%;
@@ -707,7 +707,19 @@ div.palette {
 }
 div.palette > div.title > h2 > a {
   text-decoration: none;
-  color: #000;
+  color: blue;
+  display: inline-block;
+  padding: 20px 25px;
+  padding-top: 25px;
+  transition: 0.4s;
+  border-left: 4px solid #333;
+  border-bottom: 4px solid #333;
+}
+div.palette > div.title > h2 > a:hover, div.palette > div.title > h2 > a:focus {
+  padding-left: 40px;
+  padding-right: 40px;
+  border-color: blue;
+  background-color: #eee;
 }
 
 div.colorshelf {

@@ -51,8 +51,8 @@ header.pyp-header > div.inner > div.home {
 			z-index: -1;
 		}
 		&::before {
-			top: 0;
-			right: 100%;
+			bottom: 100%;
+			left: 0;
 			background-color: rgba(200, 0, 0, 0.4);
 		}
 		&::after {
@@ -63,7 +63,7 @@ header.pyp-header > div.inner > div.home {
 		&:hover, &:focus {
 			border-color: #777;
 			&::before {
-				right: 0%;
+				bottom: 0%;
 			}
 			&::after {
 				top: 0%;
