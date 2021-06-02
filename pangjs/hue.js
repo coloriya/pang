@@ -19,6 +19,10 @@ function PangHue (app, hue) {
 		}
 	}
 
+	this.palettes.sort(function (p1, p2) {
+		return (p1.type_index - p2.type_index);
+	});
+
 	this.pageLength = this.app.preferences.pageLength;
 	this.numberOfPages = Math.ceil(this.getNumberOfPalettes() / this.pageLength);
 	this.pages = [];
